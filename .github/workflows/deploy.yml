@@ -1,0 +1,15 @@
+name: Pull Request Workflow
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+
+jobs:
+  deploy-main:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Check if PR was merged
+      if: github.event.pull_request.merged == true
+      run: echo "Pull request was merged!"

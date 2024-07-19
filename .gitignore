@@ -1,0 +1,42 @@
+# Arquivos de build gerados pelo Visual Studio
+bin/
+obj/
+
+# Arquivos de usuário do Visual Studio
+.vs/
+
+# Arquivos de configuração local do Rider
+.idea/
+
+# Byte-compiled / optimized / DLL files (Python)
+__pycache__/
+*.py[cod]
+
+# Criação de ambientes virtuais (Python)
+venv/
+env/
+*.env
+
+# Arquivos de compilação (C#)
+*.exe
+*.dll
+
+# Arquivos de configuração local (Python e outros)
+*.sqlite3
+*.pyc
+
+# Logs e arquivos temporários (ambos)
+*.log
+*.bak
+*.swp
+*~
+
+# Arquivos de dependências e caches (ambos)
+pip-log.txt
+pip-delete-this-directory.txt
+packages/  # Pacotes NuGet (C#)
+
+# Arquivos de usuário (C#)
+*.user
+*.suo
+*.sln.docstates
