@@ -1,0 +1,181 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #fff; /* Texto branco */
+    background: #1a1a1a; /* Fundo preto */
+}
+
+/* Contêiner de conteúdo */
+.content {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+/* Cabeçalhos */
+h1, h2, h3 {
+    color: #fff; /* Cabeçalhos brancos */
+}
+
+/* Links e Botões */
+a {
+    color: #6200ea; /* Detalhes roxos */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    background-color: #6200ea; /* Fundo roxo */
+    color: #fff; /* Texto branco */
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #3700b3; /* Roxo escuro para hover */
+}
+
+/* Seções */
+section {
+    padding: 5rem 1rem;
+}
+
+/* Home Section */
+#home {
+    background: #000; /* Fundo preto */
+    text-align: center;
+}
+
+#home h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+/* Sobre Section */
+#about {
+    background: #2e2e2e; /* Cinza escuro */
+}
+
+/* Skills Section */
+#skills {
+    background: #3a3a3a; /* Cinza mais claro */
+}
+
+#skills ul {
+    list-style: none;
+    padding: 0;
+}
+
+#skills li {
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+}
+
+#skills i {
+    margin-right: 1rem; /* Espaço entre ícone e texto */
+}
+
+#skills .python-icon {
+    color: #eeff00; /* Cor do ícone Python */
+}
+
+#skills .csharp-icon {
+    color: #5a8fd1; /* Cor do ícone C# */
+}
+
+#skills .cplusplus-icon {
+    color: #00599c; /* Cor do ícone C++ */
+}
+
+#skills .sql-icon {
+    color: #003c6c; /* Cor do ícone SQL */
+}
+
+#skills .bigdata-icon {
+    color: #f39c12; /* Cor do ícone Big Data */
+}
+
+#skills .powerbi-icon {
+    color: #f2c300; /* Cor do ícone Power BI */
+}
+
+#skills .scrum-icon {
+    color: #c0c0c0; /* Cor do ícone Scrum */
+}
+
+/* Portfólio Section */
+#portfolio {
+    background: #3a3a3a; /* Cinza mais claro */
+}
+
+.project {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.project img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.project h3 {
+    margin: 1rem 0;
+}
+
+/* Contato Section */
+#contact {
+    background: #2e2e2e; /* Cinza escuro */
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.contact-list li {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-list .linkedin-icon {
+    color: #0077b5; /* Cor do ícone LinkedIn */
+}
+
+.contact-list .github-icon {
+    color: #333; /* Cor do ícone GitHub */
+}
+
+.contact-list i {
+    margin-right: 0.5rem;
+}
+
+.contact-list a {
+    color: #fff; /* Texto branco */
+    text-decoration: none;
+}
+
+.contact-list a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background: #000; /* Fundo preto */
+    color: #666; /* Texto cinza claro */
+    text-align: center;
+    padding: 1rem 0;
+}
