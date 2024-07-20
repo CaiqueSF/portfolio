@@ -14,28 +14,24 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#about">Sobre</a></li>
             <li><a href="#skills">Habilidades</a></li>
-            <li><a href="#Projetos">Projetos</a></li>
-            <li><a href="#contact">Contato</a></li>
+            <li><a href="#Projetos">Portfólio</a></li>
+            <li><a href="#contact">Contatos</a></li>
         </ul>
     </nav>
 
     <!-- Home Section -->
     <section id="home">
-        <div class="background-image">
-            <img src="images/fundo-home.png" alt="Background">
-        </div>
         <div class="content">
             <h1>Olá, eu sou Caíque Ferreira</h1>
             <p>Desenvolvedor Back-end</p>
-        </div>
-        <div class="photo-placeholder">
-            <img src="images/minha-foto.png" alt="Minha Foto">
+            <div class="photo-placeholder">
+                <img src="images/minha-foto.png" alt="Minha Foto">
+            </div>
+            <div class="background-image">
+                <img src="images/fundo-home.png" alt="Fundo Home">
+            </div>
         </div>
     </section>
-
-    
-    
-
 
     <!-- Sobre Section -->
     <section id="about">
@@ -78,9 +74,6 @@
                 <li>
                     <img src="images/mongodb.png" alt="MongoDB">
                 </li>
-                <li>
-                    <img src="images/powerbi.png" alt="MongoDB">
-                </li>
             </ul>
         </div>
     </section>
@@ -88,7 +81,7 @@
     <!-- Projetos Section -->
     <section id="Projetos">
         <div class="content">
-            <h2>Projetos</h2>
+            <h2>Portfólio</h2>
             <div class="Projetos-wrapper">
                 <div class="Projetos-project">
                     <img src="images/project1.png" alt="Projeto 1">
@@ -136,11 +129,10 @@
         </div>
     </section>
 
-
     <!-- Contato Section -->
     <section id="contact">
         <div class="content">
-            <h2>Contato</h2>
+            <h2>Contatos</h2>
             <p>Você pode me encontrar através dos seguintes canais:</p>
             <ul class="contact-list">
                 <li>

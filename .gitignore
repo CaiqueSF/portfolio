@@ -40,3 +40,6 @@ packages/  # Pacotes NuGet (C#)
 *.user
 *.suo
 *.sln.docstates
+
+# Outros
+ALTERAÇÕES.txt

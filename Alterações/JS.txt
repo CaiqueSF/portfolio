@@ -16,10 +16,6 @@ function scrollRight() {
     });
 }
 
-// Adiciona eventos aos botões de navegação
-document.querySelector('.nav-left').addEventListener('click', scrollLeft);
-document.querySelector('.nav-right').addEventListener('click', scrollRight);
-
 // Ajustar tamanho dos botões de navegação quando o mouse passa sobre eles
 const navButtons = document.querySelectorAll('.nav-left, .nav-right');
 navButtons.forEach(button => {
