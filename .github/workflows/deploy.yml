@@ -2,7 +2,7 @@ name: Pull Request Workflow
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened, closed]
+    types: [closed]
 
 jobs:
   deploy-main:
