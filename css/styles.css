@@ -1,10 +1,47 @@
 /* Estilos gerais */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Cambria', serif;
     margin: 0;
     padding: 0;
     color: #fff; /* Texto branco */
     background: #1a1a1a; /* Fundo preto */
+}
+
+/* Navbar */
+nav {
+    background: #000;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    gap: 6rem; /* Ajuste o espaçamento entre os botões */
+}
+
+nav li {
+    margin: 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Calibri', sans-serif;
+    font-size: 1.7rem; /* Aumenta o tamanho da fonte dos botões */
+    padding: 0.5rem 1rem; /* Padding para os botões */
+    border: 2px solid transparent; /* Contorno transparente */
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+nav a:hover {
+    transform: scale(1.1);
+    border-color: #6200ea; /* Contorno roxo */
 }
 
 /* Contêiner de conteúdo */
@@ -16,166 +53,293 @@ body {
 }
 
 /* Cabeçalhos */
-h1, h2, h3 {
-    color: #fff; /* Cabeçalhos brancos */
-}
-
-/* Links e Botões */
-a {
-    color: #6200ea; /* Detalhes roxos */
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-.btn {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    background-color: #6200ea; /* Fundo roxo */
-    color: #fff; /* Texto branco */
-    text-decoration: none;
-}
-
-.btn:hover {
-    background-color: #3700b3; /* Roxo escuro para hover */
-}
-
-/* Seções */
-section {
-    padding: 5rem 1rem;
+h1, h2 {
+    margin: 0;
+    padding: 0;
+    font-family: 'Calibri', sans-serif;
 }
 
 /* Home Section */
 #home {
-    background: #000; /* Fundo preto */
-    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem 2rem; /* Ajusta o padding para adicionar espaçamento */
+    height: 60vh; /* Reduz a altura da Home Section */
+    overflow: hidden; /* Garante que o conteúdo não ultrapasse os limites */
 }
 
-#home h1 {
-    font-size: 2.5rem;
+#home .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+#home .background-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta a imagem de fundo para cobrir a área */
+}
+
+#home .content {
+    display: flex;
+    flex-direction: column; /* Alinha o texto verticalmente */
+    align-items: flex-start; /* Alinha o texto à esquerda */
+    max-width: 50%; /* Ajusta a largura do conteúdo de texto */
+    z-index: 1;
+}
+
+#home .content h1 {
+    font-size: 4rem; /* Aumenta o tamanho do título */
     margin: 0;
 }
 
+#home .content p {
+    font-size: 2.5rem; /* Tamanho do subtítulo */
+    margin: 1rem 0 0 0; /* Adiciona espaçamento acima do subtítulo */
+}
+
+#home .photo-placeholder {
+    width: 35%; /* Ajusta a largura da imagem (reduza conforme necessário) */
+    display: flex; /* Usado para alinhar a imagem verticalmente */
+    justify-content: center; /* Centraliza a imagem horizontalmente */
+    align-items: flex-end; /* Alinha a imagem na parte inferior do contêiner */
+    height: 100%; /* Garante que o contêiner tenha a altura total do pai */
+}
+
+#home .photo-placeholder img {
+    width: auto; /* Mantém a proporção da imagem */
+    height: auto; /* Ajusta a altura automaticamente com base na largura */
+    max-width: 100%; /* Garante que a imagem não ultrapasse a largura do contêiner */
+    max-height: 300px; /* Limita a altura máxima da imagem (ajuste conforme necessário) */
+    object-fit: contain; /* Garante que a imagem não seja distorcida */
+    margin-top: 20px; /* Adiciona espaço acima da imagem para movê-la para baixo */
+}
+
+
+
 /* Sobre Section */
 #about {
-    background: #2e2e2e; /* Cinza escuro */
+    background: #000; /* Fundo preto */
+    color: #fff;
+    padding: 4rem 0;
+    font-size: 3rem; /* Ajuste o tamanho do título no Sobre Mim */
+}
+
+#about p {
+    font-size: 1.7rem; /* Aumenta o tamanho da fonte */
 }
 
 /* Skills Section */
 #skills {
-    background: #3a3a3a; /* Cinza mais claro */
+    background: #4f0f68; /* Fundo roxo */
+    color: #fff;
+    padding: 4rem 0;
+    overflow: hidden; /* Garante que qualquer conteúdo que ultrapasse os limites seja oculto */
 }
 
-#skills ul {
-    list-style: none;
-    padding: 0;
-}
-
-#skills li {
-    margin: 1rem 0;
+.content {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
+    padding: 0 2rem; /* Adiciona padding lateral */
 }
 
-#skills i {
-    margin-right: 1rem; /* Espaço entre ícone e texto */
+#skills h2 {
+    margin-bottom: 2rem; /* Espaçamento entre o título e o contêiner de imagens */
+    font-size: 4rem; /* Ajuste o tamanho do título conforme necessário */
 }
 
-#skills .python-icon {
-    color: #eeff00; /* Cor do ícone Python */
-}
-
-#skills .csharp-icon {
-    color: #5a8fd1; /* Cor do ícone C# */
-}
-
-#skills .cplusplus-icon {
-    color: #00599c; /* Cor do ícone C++ */
-}
-
-#skills .sql-icon {
-    color: #003c6c; /* Cor do ícone SQL */
-}
-
-#skills .bigdata-icon {
-    color: #f39c12; /* Cor do ícone Big Data */
-}
-
-#skills .powerbi-icon {
-    color: #f2c300; /* Cor do ícone Power BI */
-}
-
-#skills .scrum-icon {
-    color: #c0c0c0; /* Cor do ícone Scrum */
-}
-
-/* Portfólio Section */
-#portfolio {
-    background: #3a3a3a; /* Cinza mais claro */
-}
-
-.project {
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-.project img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-.project h3 {
-    margin: 1rem 0;
-}
-
-/* Contato Section */
-#contact {
-    background: #2e2e2e; /* Cinza escuro */
-}
-
-.contact-list {
+.skills-list {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens envolvam para a próxima linha se necessário */
+    gap: 1rem; /* Espaçamento entre os itens */
     list-style: none;
     padding: 0;
-    margin: 0;
-    text-align: center;
+    margin: 0; /* Remove margem padrão */
+    padding-top: 1rem; /* Espaçamento adicional no contêiner das imagens */
+    overflow-x: hidden; /* Oculta qualquer rolagem horizontal */
+    max-width: 100%; /* Garante que a lista não exceda a largura do contêiner pai */
 }
 
-.contact-list li {
-    margin-bottom: 1rem;
+.skills-list li {
+    transition: transform 0.3s;
+    width: 105px; /* Define largura das imagens */
+    height: 105px; /* Define altura das imagens */
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.contact-list .linkedin-icon {
-    color: #0077b5; /* Cor do ícone LinkedIn */
+.skills-list img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Mantém a proporção da imagem */
 }
 
-.contact-list .github-icon {
-    color: #333; /* Cor do ícone GitHub */
+.skills-list li:hover {
+    animation: shake 0.5s; /* Adiciona efeito de tremer */
+}
+
+.skills-list li:hover {
+    animation: shake 0.5s infinite; /* Adiciona efeito de tremer indefinidamente */
+}
+
+/* Efeito de tremer */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(0); }
+    75% { transform: translateX(5px); }
+    100% { transform: translateX(0); }
+}
+
+/* Projetos Section */
+#Projetos {
+    background: #000; /* Fundo preto */
+    color: #fff;
+    padding: 4rem 0; /* Padding superior e inferior */
+    position: relative;
+    font-size: 2.5rem; /* Aumenta o tamanho do título na seção Portfólio */
+}
+
+/* Título da seção Projetos */
+#Projetos h2 {
+    font-size: 4rem; /* Aumenta o tamanho do título */
+    margin-bottom: 1rem; /* Adiciona mais espaço abaixo do título */
+    text-align: center; /* Opcional: centraliza o título */
+    position: relative;
+    top: -2rem; /* Ajusta a posição do título para cima, se necessário */
+}
+
+/* Envolva a rolagem em uma área visível e esconda a rolagem horizontal */
+.Projetos-wrapper {
+    display: flex;
+    overflow-x: hidden; /* Oculta a barra de rolagem horizontal */
+    gap: 2rem;
+    padding: 0 2rem;
+    white-space: nowrap; /* Mantém os itens em linha única */
+    scroll-behavior: smooth; /* Garante uma rolagem suave */
+}
+
+.Projetos-project {
+    flex: 0 0 auto;
+    max-width: 200px;
+    background: #333;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 1rem;
+}
+
+.Projetos-project img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.project-details {
+    padding: 0.5rem;
+}
+
+.project-details h3 {
+    font-size: 1.8rem;
+}
+
+.project-details p {
+    font-size: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    background: #4f0f68;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    transition: transform 0.3s, border-color 0.3s;
+    font-size: 1.4rem; /* Reduz o tamanho da fonte */
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    border-color: #4f0f68; /* Contorno roxo */
+}
+
+/* Botões de navegação do portfólio */
+.nav-left, .nav-right {
+    position: absolute;
+    top: 50%;
+    font-size: 2rem;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    z-index: 10; /* Garante que os botões fiquem acima do conteúdo */
+}
+
+.nav-left {
+    left: 1rem; /* Ajuste conforme necessário */
+}
+
+.nav-right {
+    right: 1rem; /* Ajuste conforme necessário */
+}
+
+.nav-left:hover, .nav-right:hover {
+    transform: scale(1.2);
+}
+
+/* Contatos Section */
+#contact {
+    background: #4f0f68; /* Fundo roxo */
+    color: #fff;
+    padding: 4rem 0;
+    font-size: 2.2rem; /* Aumenta o tamanho do título na seção Contatos */
+}
+
+#contact h2 {
+    margin-bottom: 1rem; /* Ajuste o valor conforme necessário */
+    /* Opcional: ajuste o tamanho do título se necessário */
+    font-size: 4rem; /* Ajuste conforme o tamanho desejado */
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-list li {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    font-size: 3rem; /* Aumenta o tamanho da fonte */
+    margin-bottom: 2rem; /* Adiciona espaço entre os itens da lista */
 }
 
 .contact-list i {
-    margin-right: 0.5rem;
+    font-size: 3rem; /* Aumenta o tamanho dos ícones */
+}
+
+.contact-list .fa-envelope {
+    color: #8c8c3f; /* Cor bege para o ícone de e-mail */
 }
 
 .contact-list a {
-    color: #fff; /* Texto branco */
+    color: #fff;
     text-decoration: none;
-}
-
-.contact-list a:hover {
-    text-decoration: underline;
 }
 
 /* Footer */
 footer {
-    background: #000; /* Fundo preto */
-    color: #666; /* Texto cinza claro */
+    background: #000;
+    color: #fff;
     text-align: center;
     padding: 1rem 0;
 }
