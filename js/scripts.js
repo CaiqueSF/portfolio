@@ -1,32 +1,51 @@
-// scripts.js
-
-function scrollLeft() {
-    const container = document.querySelector('#Projetos .Projetos-wrapper');
-    container.scrollBy({
-        left: -container.clientWidth,
-        behavior: 'smooth'
+document.addEventListener("DOMContentLoaded", function() {
+    const homeLink = document.querySelector('nav a[href="#home"]');
+    const aboutLink = document.querySelector('nav a[href="#about"]');
+    const skillsLink = document.querySelector('nav a[href="#skills"]');
+    const portfolioLink = document.querySelector('nav a[href="#portfolio"]');
+    const contactLink = document.querySelector('nav a[href="#contact"]');
+  
+    // Scroll suave ao clicar nos links de navegação
+    homeLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.getElementById('home').scrollIntoView({ behavior: 'smooth' });
     });
-}
-
-function scrollRight() {
-    const container = document.querySelector('#Projetos .Projetos-wrapper');
-    container.scrollBy({
-        left: container.clientWidth,
-        behavior: 'smooth'
+  
+    aboutLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
     });
-}
-
-// Adiciona eventos aos botões de navegação
-document.querySelector('.nav-left').addEventListener('click', scrollLeft);
-document.querySelector('.nav-right').addEventListener('click', scrollRight);
-
-// Ajustar tamanho dos botões de navegação quando o mouse passa sobre eles
-const navButtons = document.querySelectorAll('.nav-left, .nav-right');
-navButtons.forEach(button => {
-    button.addEventListener('mouseover', () => {
-        button.style.transform = 'scale(1.2)';
+  
+    skillsLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.getElementById('skills').scrollIntoView({ behavior: 'smooth' });
     });
-    button.addEventListener('mouseout', () => {
-        button.style.transform = 'scale(1)';
+  
+    portfolioLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' });
     });
-});
+  
+    contactLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    });
+  
+    // Adiciona efeito de tremor às imagens na seção de Habilidades
+    const skillImages = document.querySelectorAll('#skills img');
+    skillImages.forEach(function(img) {
+      img.addEventListener('mouseover', function() {
+        img.style.animation = 'tremble 0.1s infinite';
+      });
+      img.addEventListener('mouseout', function() {
+        img.style.animation = '';
+      });
+      img.addEventListener('touchstart', function() {
+        img.style.animation = 'tremble 0.1s infinite';
+      });
+      img.addEventListener('touchend', function() {
+        img.style.animation = '';
+      });
+    });
+  });
+  
