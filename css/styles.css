@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
 
 /* Estilos gerais */
 body {
-    font-family: 'Cambria', serif;
+    font-family: "Cambria", serif;
     margin: 0;
     padding: 0;
     color: #fff; /* Texto branco */
@@ -12,7 +12,7 @@ body {
 /* Navbar */
 nav {
     background: #000;
-    padding: 1rem;
+    padding: 0.5rem;
     position: fixed;
     width: 100%;
     top: 0;
@@ -34,8 +34,8 @@ nav li {
 nav a {
     color: #fff;
     text-decoration: none;
-    font-family: 'Calibri', sans-serif;
-    font-size: 1.7rem; /* Aumenta o tamanho da fonte dos botões */
+    font-family: "Calibri", sans-serif;
+    font-size: 2.4rem; /* Aumenta o tamanho da fonte dos botões */
     padding: 0.5rem 1rem; /* Padding para os botões */
     border: 2px solid transparent; /* Contorno transparente */
     border-radius: 20px; /* Bordas arredondadas */
@@ -44,7 +44,7 @@ nav a {
 
 nav a:hover {
     transform: scale(1.1);
-    border-color: rgb(119, 41, 133); /* Contorno roxo */
+    border-color: rgb(112, 3, 83); /* Contorno roxo */
     border-width: 3px; /* Aumenta a espessura da borda ao passar o mouse */
     border-radius: 20px; /* Bordas arredondadas no hover */
 }
@@ -58,16 +58,19 @@ nav a:hover {
 }
 
 /* Cabeçalhos */
-h1, h2 {
+h1,
+h2 {
     margin: 0;
     padding: 0;
-    font-family: 'Calibri', sans-serif;
+    font-family: "Calibri", sans-serif;
 }
 
 /* Cor de fundo para todas as seções reveladas */
 .reveal {
     opacity: 0;
-    transform: translateY(20px); /* Mova o conteúdo para baixo para efeito de entrada */
+    transform: translateY(
+        20px
+    ); /* Mova o conteúdo para baixo para efeito de entrada */
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
@@ -82,11 +85,11 @@ h1, h2 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 4rem 2rem; /* Ajusta o padding para adicionar espaçamento */
-    height: 60vh; /* Reduz a altura da Home Section */
+    padding: 5rem 2rem; /* Ajusta o padding para adicionar espaçamento */
+    height: 55vh; /* Reduz a altura da Home Section */
     overflow: hidden; /* Garante que o conteúdo não ultrapasse os limites */
     perspective: 1000px; /* Define a perspectiva para criar um efeito 3D */
-    font-family: 'Poppins', sans-serif; /* Aplica a nova fonte */
+    font-family: "Poppins", sans-serif; /* Aplica a nova fonte */
 }
 
 #home .background-image {
@@ -96,8 +99,9 @@ h1, h2 {
     width: 100%;
     height: 100%;
     z-index: -1;
-    background: url('../images/RedesNeuraisHome.jpg') no-repeat center center;
+    background: url("../images/FundoDegrade_2.png") no-repeat center center;
     background-size: cover; /* Ajusta a imagem para cobrir a área */
+    background-position: center 10%; /* Ajusta a posição vertical da imagem */
 }
 
 #home .background-image img {
@@ -110,19 +114,20 @@ h1, h2 {
     display: flex;
     flex-direction: column; /* Alinha o texto verticalmente */
     align-items: flex-start; /* Alinha o texto à esquerda */
-    max-width: 50%; /* Ajusta a largura do conteúdo de texto */
-    z-index: 1;
+    max-width: 40%; /* Ajusta a largura do conteúdo de texto */
+    z-index: 1; /* Alinha o texto*/
+    padding-top: 2rem; /* Adiciona padding superior para descer o conteúdo */
 }
 
 #home .content h1 {
-    font-size: 4rem; /* Aumenta o tamanho do título */
-    margin: 0;
+    font-size: 4.9rem; /* Aumenta o tamanho do título */
+    margin: 3rem 0 0 0; /* Aumenta a margem superior para descer o título */
     text-shadow: 5px 5px 8px black; /* Adiciona sombra ao título */
 }
 
 #home .content p {
-    font-size: 2.5rem; /* Tamanho do subtítulo */
-    margin: 1rem 0 0 0; /* Adiciona espaçamento acima do subtítulo */
+    font-size: 3.5rem; /* Tamanho do subtítulo */
+    margin: 2rem 0 0 0; /* Aumenta a margem superior para descer o subtítulo */
     text-shadow: 5px 5px 8px black; /* Adiciona sombra ao subtítulo */
 }
 
@@ -132,6 +137,7 @@ h1, h2 {
     justify-content: center; /* Centraliza a imagem horizontalmente */
     align-items: flex-end; /* Alinha a imagem na parte inferior do contêiner */
     height: 100%; /* Garante que o contêiner tenha a altura total do pai */
+    position: relative; /* Necessário para ajustar a posição da imagem */
 }
 
 #home .photo-placeholder img {
@@ -140,23 +146,24 @@ h1, h2 {
     max-width: 100%; /* Garante que a imagem não ultrapasse a largura do contêiner */
     max-height: 300px; /* Limita a altura máxima da imagem (ajuste conforme necessário) */
     object-fit: contain; /* Garante que a imagem não seja distorcida */
-    margin-top: 20px; /* Adiciona espaço acima da imagem para movê-la para baixo */
+    position: absolute; /* Permite ajustar a posição da imagem */
+    transform: translateY(-10px); /* Ajuste o valor conforme necessário */
 }
 
 #home.reveal {
-    background-color: rgb(119, 41, 133); /* Cor roxa para a Home */
+    background-color: rgb(112, 3, 83); /* Cor roxa para a Home */
 }
 
 /* Sobre Section */
 #about {
     position: relative;
-    background: url('../images/RedesNeurais1.jpg') no-repeat center center;
+    background: url("../images/FundoDegrade_1.png") no-repeat center center;
     color: #fff;
     padding: 4rem 0;
-    font-family: 'Poppins', sans-serif; /* Aplica a nova fonte */    
+    font-family: "Poppins", sans-serif; /* Aplica a nova fonte */
     overflow: hidden; /* Garante que qualquer conteúdo que ultrapasse os limites seja oculto */
     background-size: cover; /* Certifica que a imagem cubra todo o contêiner */
-    background-position: center; /* Centraliza a imagem de fundo */
+    background-position: center 100%; /* Ajusta a posição vertical da imagem */
     background-repeat: no-repeat; /* Não repete a imagem de fundo */
 }
 
@@ -179,8 +186,8 @@ h1, h2 {
 
 /* Estilização do botão de currículo */
 .resume-button {
-    font-family: 'Poppins', sans-serif; /* Aplica a nova fonte */
-    background-color: rgb(119, 41, 133);
+    font-family: "Poppins", sans-serif; /* Aplica a nova fonte */
+    background-color: black;
     color: white;
     padding: 10px 15px;
     border: none;
@@ -194,15 +201,16 @@ h1, h2 {
 }
 
 .resume-button:hover {
-    background-color: rgb(119, 41, 133);
+    background-color: black;
     transform: scale(1.1); /* Efeito de hover para o botão */
 }
 
 /* Skills Section */
 #skills {
     position: relative;
-    background: url('../images/RedesNeurais2.jpg') no-repeat center center;
+    background: url("../images/FundoDegrade_2.png") no-repeat center center;
     background-size: cover; /* Certifica que a imagem cubra todo o contêiner */
+    background-position: center 0%; /* Ajuste o valor percentual verticalmente */
     color: #fff;
     padding: 4rem 0;
     overflow: hidden; /* Garante que qualquer conteúdo que ultrapasse os limites seja oculto */
@@ -222,7 +230,7 @@ h1, h2 {
 }
 
 #skills.reveal {
-    background-color: rgb(119, 41, 133); /* Cor roxa para Skills */
+    background-color: rgb(112, 3, 83); /* Cor roxa para Skills */
 }
 
 .skills-list {
@@ -277,21 +285,32 @@ h1, h2 {
 
 /* Efeito de tremer */
 @keyframes shake {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    50% { transform: translateX(0); }
-    75% { transform: translateX(5px); }
-    100% { transform: translateX(0); }
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(0);
+    }
+    75% {
+        transform: translateX(5px);
+    }
+    100% {
+        transform: translateX(0);
+    }
 }
 
 /* Projetos Section */
 #Projetos {
-    background: url('../images/RedesNeurais3.jpg') no-repeat center center;
+    background: url("../images/FundoDegrade_1.png") no-repeat center center;
     background-size: cover; /* Ajusta a imagem para cobrir a área */
+    background-position: center 100%; /* Ajusta a posição vertical da imagem */
     color: #fff;
     padding: 4rem 0; /* Padding superior e inferior */
     position: relative;
-    font-family: 'Poppins', sans-serif; /* Aplica a nova fonte */
+    font-family: "Poppins", sans-serif; /* Aplica a nova fonte */
     overflow: hidden; /* Garante que o conteúdo não ultrapasse os limites */
     height: auto; /* Ajusta a altura para o conteúdo */
     max-height: 800px; /* Define uma altura máxima, ajuste conforme necessário */
@@ -326,7 +345,7 @@ h1, h2 {
 
 /* Estilo para o título do projeto */
 .project-title {
-    background: rgb(119, 41, 133); /* Cor de fundo roxa */
+    background: rgb(112, 3, 83); /* Cor de fundo roxa */
     color: #fff; /* Cor do texto */
     padding: 0.2rem 0.5rem; /* Reduz o espaçamento ao redor do título verticalmente */
     text-align: center; /* Centraliza o texto horizontalmente */
@@ -341,7 +360,7 @@ h1, h2 {
     align-items: center; /* Centraliza o texto verticalmente */
     justify-content: center; /* Centraliza o texto horizontalmente */
     box-sizing: border-box; /* Inclui o padding na largura e altura */
-    border-bottom: 0.3rem solid rgb(119, 41, 133); /* Define a borda roxa mais grossa na parte inferior */
+    border-bottom: 0.3rem solid rgb(112, 3, 83); /* Define a borda roxa mais grossa na parte inferior */
 }
 
 /* Estilo para a imagem do projeto */
@@ -351,13 +370,15 @@ h1, h2 {
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    margin-bottom: 4.5rem; /* Espaço abaixo da imagem */
+    margin-bottom: 3.1rem; /* Espaço abaixo da imagem */
 }
 
 /* Contêiner do conteúdo do projeto */
 .Projetos-project-content {
     margin-top: 4.1rem; /* Espaço abaixo do título para o conteúdo do projeto */
-    height: calc(100% - 4.1rem); /* Ajusta a altura do conteúdo para não ultrapassar o contêiner */
+    height: calc(
+        100% - 4.1rem
+    ); /* Ajusta a altura do conteúdo para não ultrapassar o contêiner */
     display: flex; /* Facilita o alinhamento interno */
     align-items: center; /* Centraliza o conteúdo verticalmente */
     justify-content: center; /* Centraliza o conteúdo horizontalmente */
@@ -371,7 +392,9 @@ h1, h2 {
     padding: 0;
     white-space: nowrap; /* Mantém os itens em linha única */
     scroll-behavior: smooth; /* Garante uma rolagem suave */
-    width: calc(100% - 4rem); /* Ajusta a largura para permitir apenas 4 projetos visíveis */
+    width: calc(
+        100% - 4rem
+    ); /* Ajusta a largura para permitir apenas 4 projetos visíveis */
 }
 
 .project-details {
@@ -380,7 +403,7 @@ h1, h2 {
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente para melhor legibilidade */
+    background: black; /* Fundo semi-transparente para melhor legibilidade */
     color: #fff; /* Cor do texto */
     text-align: center; /* Centraliza o texto */
 }
@@ -395,7 +418,7 @@ h1, h2 {
 
 .btn {
     display: inline-block;
-    background: rgb(119, 41, 133);
+    background: rgb(112, 3, 83);
     color: #fff;
     text-decoration: none;
     padding: 0.5rem 1rem;
@@ -407,11 +430,12 @@ h1, h2 {
 
 .btn:hover {
     transform: scale(1.05);
-    border-color: rgb(119, 41, 133); /* Contorno roxo */
+    border-color: rgb(112, 3, 83); /* Contorno roxo */
 }
 
 /* Botões de navegação do portfólio */
-.nav-left, .nav-right {
+.nav-left,
+.nav-right {
     position: absolute;
     top: 50%;
     font-size: 2rem;
@@ -432,14 +456,16 @@ h1, h2 {
     right: 1rem; /* Ajuste conforme necessário */
 }
 
-.nav-left:hover, .nav-right:hover {
+.nav-left:hover,
+.nav-right:hover {
     transform: scale(1.2);
 }
 
 /* Contatos Section */
 #contact {
-    background: url('../images/RedesNeurais4.jpg') no-repeat center center;
+    background: url("../images/FundoDegrade_2.png") no-repeat center center;
     background-size: cover; /* Ajusta a imagem para cobrir a área */
+    background-position: center 30%; /* Ajusta a posição vertical da imagem */
     color: #fff;
     padding: 4rem 0;
     font-size: 2.2rem; /* Aumenta o tamanho do texto na seção Contatos */
@@ -455,7 +481,7 @@ h1, h2 {
 }
 
 #contact.reveal {
-    background-color: rgb(119, 41, 133); /* Cor roxa para Contact */
+    background-color: rgb(112, 3, 83); /* Cor roxa para Contact */
 }
 
 .contact-list {
