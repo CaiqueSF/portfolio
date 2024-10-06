@@ -7,6 +7,8 @@ body {
     padding: 0;
     color: #fff; /* Texto branco */
     background: #1a1a1a; /* Fundo preto */
+    background: url("../images/fundo1.png") no-repeat center center; /* Defina a imagem de fundo aqui */
+    background-size: cover; /* Ajusta a imagem para cobrir toda a área */
 }
 
 /* Navbar */
@@ -99,7 +101,7 @@ h2 {
     width: 100%;
     height: 100%;
     z-index: -1;
-    background: url("../images/FundoDegrade_2.png") no-repeat center center;
+    /* background: url("../images/FundoDegrade_2.png") no-repeat center center; */
     background-size: cover; /* Ajusta a imagem para cobrir a área */
     background-position: center 10%; /* Ajusta a posição vertical da imagem */
 }
@@ -157,7 +159,7 @@ h2 {
 /* Sobre Section */
 #about {
     position: relative;
-    background: url("../images/FundoDegrade_1.png") no-repeat center center;
+    /* background: url("../images/FundoDegrade_1.png") no-repeat center center; */
     color: #fff;
     padding: 4rem 0;
     font-family: "Poppins", sans-serif; /* Aplica a nova fonte */
@@ -187,13 +189,13 @@ h2 {
 /* Estilização do botão de currículo */
 .resume-button {
     font-family: "Poppins", sans-serif; /* Aplica a nova fonte */
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: rgb(143, 27, 143);
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
     text-decoration: none;
-    font-size: 30px;
+    font-size: 25px;
     margin-top: 1.6rem; /* Adiciona espaçamento acima do botão */
     display: inline-block; /* Exibe o botão como um bloco inline */
     cursor: pointer;
@@ -208,7 +210,7 @@ h2 {
 /* Skills Section */
 #skills {
     position: relative;
-    background: url("../images/FundoDegrade_2.png") no-repeat center center;
+    /* background: url("../images/FundoDegrade_2.png") no-repeat center center; */
     background-size: cover; /* Certifica que a imagem cubra todo o contêiner */
     background-position: center 0%; /* Ajuste o valor percentual verticalmente */
     color: #fff;
@@ -304,133 +306,83 @@ h2 {
 
 /* Projetos Section */
 #Projetos {
-    background: url("../images/FundoDegrade_1.png") no-repeat center center;
     background-size: cover; /* Ajusta a imagem para cobrir a área */
-    background-position: center 100%; /* Ajusta a posição vertical da imagem */
+    background-position: center; /* Ajusta a posição central da imagem */
     color: #fff;
     padding: 4rem 0; /* Padding superior e inferior */
     position: relative;
     font-family: "Poppins", sans-serif; /* Aplica a nova fonte */
     overflow: hidden; /* Garante que o conteúdo não ultrapasse os limites */
-    height: auto; /* Ajusta a altura para o conteúdo */
-    max-height: 800px; /* Define uma altura máxima, ajuste conforme necessário */
 }
 
 /* Título da seção Projetos */
 #Projetos h2 {
     font-size: 5rem; /* Aumenta o tamanho do título */
     margin-bottom: 1rem; /* Adiciona mais espaço abaixo do título */
-    text-align: center; /* Opcional: centraliza o título */
-    position: relative;
-    top: -2rem; /* Ajusta a posição do título para cima, se necessário */
-    text-shadow: 5px 5px 8px black; /* Sombra roxa para o título */
+    text-align: center; /* Centraliza o título */
 }
 
-#Projetos.reveal {
-    background-color: #000; /* Cor preta para Projetos */
+/* Wrapper dos projetos */
+.Projetos-wrapper {
+    display: flex; /* Alinha os projetos em linha */
+    overflow-x: auto; /* Permite rolagem horizontal */
+    padding: 1rem; /* Adiciona padding ao redor dos projetos */
 }
 
 /* Contêiner do projeto */
 .Projetos-project {
-    flex: 0 0 auto;
-    width: 300px; /* Define a largura dos campos dos projetos */
-    height: auto; /* Ajuste conforme necessário */
-    background: #333; /* Cor de fundo cinza mais escura do projeto */
+    flex: 0 0 auto; /* Impede que os projetos encolham */
+    width: 300px; /* Largura fixa para cada projeto */
+    margin-right: 30px; /* Espaçamento entre os projetos */
     border-radius: 5px; /* Cantos arredondados */
     overflow: hidden; /* Esconde qualquer conteúdo que saia do contêiner */
-    position: relative; /* Adiciona contexto para a posição do conteúdo */
     display: flex; /* Facilita o alinhamento interno */
     flex-direction: column; /* Alinha o conteúdo verticalmente */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    text-align: center; /* Centraliza o texto */
+    margin-bottom: 20px; /* Espaçamento entre projetos */
 }
 
 /* Estilo para o título do projeto */
 .project-title {
-    background: rgb(112, 3, 83); /* Cor de fundo roxa */
     color: #fff; /* Cor do texto */
-    padding: 0.2rem 0.5rem; /* Reduz o espaçamento ao redor do título verticalmente */
-    text-align: center; /* Centraliza o texto horizontalmente */
-    position: absolute; /* Posiciona o título no topo do projeto */
-    top: 0;
-    left: 0;
-    right: 0;
-    font-size: 1.55rem; /* Mantém o tamanho da fonte do título */
-    z-index: 1; /* Garante que o título fique acima do conteúdo */
-    height: 4.1rem; /* Aumenta a altura para a borda mais grossa */
-    display: flex; /* Usa flexbox para centralizar o texto */
-    align-items: center; /* Centraliza o texto verticalmente */
-    justify-content: center; /* Centraliza o texto horizontalmente */
-    box-sizing: border-box; /* Inclui o padding na largura e altura */
-    border-bottom: 0.3rem solid rgb(112, 3, 83); /* Define a borda roxa mais grossa na parte inferior */
+    text-align: center; /* Centraliza o título */
+    font-size: 1.6rem; /* Tamanho do título do projeto */
 }
 
 /* Estilo para a imagem do projeto */
 .project-image {
-    width: 100%;
-    height: 280px; /* Ajuste conforme necessário */
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    margin-bottom: 3.1rem; /* Espaço abaixo da imagem */
+    width: 100%; /* Largura total do projeto */
+    height: 200px; /* Altura da imagem do projeto */
+    background-size: cover; /* Ajusta a imagem para cobrir a área */
+    background-position: center; /* Centraliza a imagem */
+    border-radius: 8px; /* Arredonda as pontas da imagem */
 }
 
 /* Contêiner do conteúdo do projeto */
-.Projetos-project-content {
-    margin-top: 4.1rem; /* Espaço abaixo do título para o conteúdo do projeto */
-    height: calc(
-        100% - 4.1rem
-    ); /* Ajusta a altura do conteúdo para não ultrapassar o contêiner */
-    display: flex; /* Facilita o alinhamento interno */
-    align-items: center; /* Centraliza o conteúdo verticalmente */
-    justify-content: center; /* Centraliza o conteúdo horizontalmente */
-}
-
-/* Envolva a rolagem em uma área visível e esconda a rolagem horizontal */
-.Projetos-wrapper {
-    display: flex;
-    overflow-x: hidden; /* Oculta a barra de rolagem horizontal */
-    gap: 2rem;
-    padding: 0;
-    white-space: nowrap; /* Mantém os itens em linha única */
-    scroll-behavior: smooth; /* Garante uma rolagem suave */
-    width: calc(
-        100% - 4rem
-    ); /* Ajusta a largura para permitir apenas 4 projetos visíveis */
-}
-
 .project-details {
-    padding: 1rem; /* Ajusta o padding para melhor visualização */
-    position: absolute; /* Posiciona sobre a imagem de fundo */
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: black; /* Fundo semi-transparente para melhor legibilidade */
+    position: relative; /* Posiciona o conteúdo abaixo da imagem */
+    background: black; /* Fundo para melhor legibilidade */
     color: #fff; /* Cor do texto */
     text-align: center; /* Centraliza o texto */
 }
 
-.project-details h3 {
-    font-size: 1.8rem;
-}
-
-.project-details p {
-    font-size: 1rem;
-}
-
 .btn {
     display: inline-block;
-    background: rgb(112, 3, 83);
-    color: #fff;
+    color: #fff; /* Cor do texto */
     text-decoration: none;
     padding: 0.5rem 1rem;
-    border: 2px solid transparent;
-    border-radius: 5px;
-    transition: transform 0.3s, border-color 0.3s;
-    font-size: 0.9rem; /* Reduz o tamanho da fonte */
+    border: 2px solid #fff; /* Define a cor do contorno (branco neste caso) */
+    border-radius: 5px; /* Cantos arredondados */
+    transition: transform 0.3s, border-color 0.3s; /* Transições suaves */
+    font-size: 1rem; /* Tamanho da fonte */
+    margin-top: 1rem; /* Espaço acima do botão */
 }
 
+/* Efeito hover no botão */
 .btn:hover {
     transform: scale(1.05);
-    border-color: rgb(112, 3, 83); /* Contorno roxo */
+    border-color: purple; /* Altera a cor do contorno no hover (exemplo: laranja) */
 }
 
 /* Botões de navegação do portfólio */
@@ -463,7 +415,7 @@ h2 {
 
 /* Contatos Section */
 #contact {
-    background: url("../images/FundoDegrade_2.png") no-repeat center center;
+    /* background: url("../images/FundoDegrade_2.png") no-repeat center center; */
     background-size: cover; /* Ajusta a imagem para cobrir a área */
     background-position: center 30%; /* Ajusta a posição vertical da imagem */
     color: #fff;
