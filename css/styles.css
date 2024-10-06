@@ -189,13 +189,13 @@ h2 {
 /* Estilização do botão de currículo */
 .resume-button {
     font-family: "Poppins", sans-serif; /* Aplica a nova fonte */
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: rgb(143, 27, 143);
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
     text-decoration: none;
-    font-size: 30px;
+    font-size: 25px;
     margin-top: 1.6rem; /* Adiciona espaçamento acima do botão */
     display: inline-block; /* Exibe o botão como um bloco inline */
     cursor: pointer;
