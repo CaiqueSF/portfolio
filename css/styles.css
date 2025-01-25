@@ -1,471 +1,115 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
-
-/* Estilos gerais */
-body {
-    font-family: "Cambria", serif;
+body,
+html {
     margin: 0;
     padding: 0;
-    color: #fff; /* Texto branco */
-    background: #1a1a1a; /* Fundo preto */
-    background: url("../images/fundo1.png") no-repeat center center; /* Defina a imagem de fundo aqui */
-    background-size: cover; /* Ajusta a imagem para cobrir toda a área */
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    background-image: url("../images/fundo_1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Garante que a imagem de fundo permaneça fixa ao rolar */
+    color: #4b2e2e; /* Define a cor do texto como marrom escuro */
 }
 
-/* Navbar */
-nav {
-    background: #000;
-    padding: 0.5rem;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
+header {
+    background-color: #4b2e2e; /* Marrom escuro */
+    padding: 10px 0;
 }
 
 nav ul {
     list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
     justify-content: center;
-    padding: 0;
-    gap: 6rem; /* Ajuste o espaçamento entre os botões */
+    flex-wrap: wrap; /* Permite que os itens do menu quebrem linha em telas menores */
 }
 
-nav li {
-    margin: 0;
+nav ul li {
+    margin: 0 15px;
 }
 
-nav a {
-    color: #fff;
+nav ul li a {
+    color: white;
     text-decoration: none;
-    font-family: "Calibri", sans-serif;
-    font-size: 2.4rem; /* Aumenta o tamanho da fonte dos botões */
-    padding: 0.5rem 1rem; /* Padding para os botões */
-    border: 2px solid transparent; /* Contorno transparente */
-    border-radius: 20px; /* Bordas arredondadas */
-    transition: transform 0.3s, border-color 0.3s, background-color 0.3s; /* Adiciona a transição de cor de fundo */
+    font-weight: bold;
+    font-size: 1.2em; /* Tamanho da fonte padrão */
 }
 
-nav a:hover {
-    transform: scale(1.1);
-    border-color: rgb(112, 3, 83); /* Contorno roxo */
-    border-width: 3px; /* Aumenta a espessura da borda ao passar o mouse */
-    border-radius: 20px; /* Bordas arredondadas no hover */
+.section {
+    padding: 60px 20px;
+    min-height: 100vh; /* Garante que cada seção ocupe pelo menos a altura da tela */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Contêiner de conteúdo */
-.content {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 0;
-}
-
-/* Cabeçalhos */
-h1,
-h2 {
-    margin: 0;
-    padding: 0;
-    font-family: "Calibri", sans-serif;
-}
-
-/* Cor de fundo para todas as seções reveladas */
-.reveal {
-    opacity: 0;
-    transform: translateY(
-        20px
-    ); /* Mova o conteúdo para baixo para efeito de entrada */
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.reveal.visible {
-    opacity: 1;
-    transform: translateY(0); /* Retorna ao estado original */
-}
-
-/* Home Section */
-#home {
-    position: relative;
+.home-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 5rem 2rem; /* Ajusta o padding para adicionar espaçamento */
-    height: 55vh; /* Reduz a altura da Home Section */
-    overflow: hidden; /* Garante que o conteúdo não ultrapasse os limites */
-    perspective: 1000px; /* Define a perspectiva para criar um efeito 3D */
-    font-family: "Poppins", sans-serif; /* Aplica a nova fonte */
+    width: 80%;
 }
 
-#home .background-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    /* background: url("../images/FundoDegrade_2.png") no-repeat center center; */
-    background-size: cover; /* Ajusta a imagem para cobrir a área */
-    background-position: center 10%; /* Ajusta a posição vertical da imagem */
+.text-content {
+    max-width: 50%;
 }
 
-#home .background-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ajusta a imagem de fundo para cobrir a área */
+.text-content h1 {
+    font-size: 3em; /* Aumenta o tamanho do título */
+    color: #4b2e2e; /* Marrom escuro */
 }
 
-#home .content {
-    display: flex;
-    flex-direction: column; /* Alinha o texto verticalmente */
-    align-items: flex-start; /* Alinha o texto à esquerda */
-    max-width: 40%; /* Ajusta a largura do conteúdo de texto */
-    z-index: 1; /* Alinha o texto*/
-    padding-top: 2rem; /* Adiciona padding superior para descer o conteúdo */
+.text-content h2 {
+    font-size: 2em; /* Aumenta o tamanho do subtítulo */
+    color: #4b2e2e; /* Marrom escuro */
 }
 
-#home .content h1 {
-    font-size: 4.9rem; /* Aumenta o tamanho do título */
-    margin: 3rem 0 0 0; /* Aumenta a margem superior para descer o título */
-    text-shadow: 5px 5px 8px black; /* Adiciona sombra ao título */
+.image-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%; /* Torna a imagem circular */
 }
 
-#home .content p {
-    font-size: 3.5rem; /* Tamanho do subtítulo */
-    margin: 2rem 0 0 0; /* Aumenta a margem superior para descer o subtítulo */
-    text-shadow: 5px 5px 8px black; /* Adiciona sombra ao subtítulo */
-}
-
-#home .photo-placeholder {
-    width: 35%; /* Ajusta a largura da imagem (reduza conforme necessário) */
-    display: flex; /* Usado para alinhar a imagem verticalmente */
-    justify-content: center; /* Centraliza a imagem horizontalmente */
-    align-items: flex-end; /* Alinha a imagem na parte inferior do contêiner */
-    height: 100%; /* Garante que o contêiner tenha a altura total do pai */
-    position: relative; /* Necessário para ajustar a posição da imagem */
-}
-
-#home .photo-placeholder img {
-    width: auto; /* Mantém a proporção da imagem */
-    height: auto; /* Ajusta a altura automaticamente com base na largura */
-    max-width: 100%; /* Garante que a imagem não ultrapasse a largura do contêiner */
-    max-height: 300px; /* Limita a altura máxima da imagem (ajuste conforme necessário) */
-    object-fit: contain; /* Garante que a imagem não seja distorcida */
-    position: absolute; /* Permite ajustar a posição da imagem */
-    transform: translateY(-10px); /* Ajuste o valor conforme necessário */
-}
-
-#home.reveal {
-    background-color: rgb(112, 3, 83); /* Cor roxa para a Home */
-}
-
-/* Sobre Section */
-#about {
-    position: relative;
-    /* background: url("../images/FundoDegrade_1.png") no-repeat center center; */
-    color: #fff;
-    padding: 4rem 0;
-    font-family: "Poppins", sans-serif; /* Aplica a nova fonte */
-    overflow: hidden; /* Garante que qualquer conteúdo que ultrapasse os limites seja oculto */
-    background-size: cover; /* Certifica que a imagem cubra todo o contêiner */
-    background-position: center 100%; /* Ajusta a posição vertical da imagem */
-    background-repeat: no-repeat; /* Não repete a imagem de fundo */
-}
-
-#about h2 {
-    font-size: 5rem; /* Ajusta o tamanho do título */
-    text-shadow: 5px 5px 8px black; /* Sombra roxa para o título */
-    margin: 0;
-}
-
-#about p {
-    font-size: 1.7rem; /* Aumenta o tamanho da fonte */
-    color: #fff; /* Garante que o texto dos parágrafos seja branco */
-    text-shadow: none; /* Remove a sombra do texto para os parágrafos */
-}
-
-#about.reveal {
-    background-color: #000; /* Cor preta para About */
-    color: #fff;
-}
-
-/* Estilização do botão de currículo */
-.resume-button {
-    font-family: "Poppins", sans-serif; /* Aplica a nova fonte */
-    background-color: white;
-    color: rgb(143, 27, 143);
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 25px;
-    margin-top: 1.6rem; /* Adiciona espaçamento acima do botão */
-    display: inline-block; /* Exibe o botão como um bloco inline */
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.resume-button:hover {
-    background-color: black;
-    transform: scale(1.1); /* Efeito de hover para o botão */
-}
-
-/* Skills Section */
-#skills {
-    position: relative;
-    /* background: url("../images/FundoDegrade_2.png") no-repeat center center; */
-    background-size: cover; /* Certifica que a imagem cubra todo o contêiner */
-    background-position: center 0%; /* Ajuste o valor percentual verticalmente */
-    color: #fff;
-    padding: 4rem 0;
-    overflow: hidden; /* Garante que qualquer conteúdo que ultrapasse os limites seja oculto */
-}
-
-.content {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centraliza o conteúdo horizontalmente */
-    padding: 0 2rem; /* Adiciona padding lateral */
-}
-
-#skills h2 {
-    margin-bottom: 2rem; /* Espaçamento entre o título e o contêiner de imagens */
-    font-size: 5rem; /* Ajuste o tamanho do título conforme necessário */
-    text-shadow: 5px 5px 8px black; /* Sombra preta do texto para dar efeito de profundidade */
-}
-
-#skills.reveal {
-    background-color: rgb(112, 3, 83); /* Cor roxa para Skills */
-}
-
-.skills-list {
-    display: flex;
-    flex-wrap: nowrap; /* Impede que os itens se movam para a linha abaixo */
-    gap: 1rem; /* Espaçamento entre os itens */
-    list-style: none;
-    padding: 0 1rem;
-    margin: 0; /* Remove margem padrão */
-    padding-top: 1rem; /* Espaçamento adicional no contêiner das imagens */
-    overflow: hidden; /* Remove a rolagem horizontal */
-    width: 100vw; /* Garante que a lista ocupe toda a largura da viewport */
-    box-sizing: border-box; /* Inclui o padding e a borda no tamanho total do elemento */
-    justify-content: space-between; /* Distribui os itens uniformemente */
-}
-
-.skills-list li {
-    flex: 1 0 120px; /* Permite que os itens se ajustem ao tamanho disponível */
-    max-width: 120px; /* Define um tamanho máximo */
-    height: auto; /* Permite que a altura seja ajustada automaticamente */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box; /* Inclui o padding e a borda no tamanho total do elemento */
-}
-
-.skills-list img {
-    max-width: 100%; /* Garante que as imagens não excedam a largura do item */
-    max-height: 100%; /* Garante que as imagens não excedam a altura do item */
-    object-fit: contain; /* Mantém a proporção da imagem */
-}
-
-@media (min-width: 600px) {
-    .skills-list li {
-        flex: 1 1 15%; /* Aumenta o tamanho dos itens em telas maiores */
-    }
-}
-
-@media (min-width: 900px) {
-    .skills-list li {
-        flex: 1 1 20%; /* Ajuste para telas ainda maiores */
-    }
-}
-
-.skills-list li:hover {
-    animation: shake 0.5s; /* Adiciona efeito de tremer */
-}
-
-.skills-list li:hover {
-    animation: shake 0.5s infinite; /* Adiciona efeito de tremer indefinidamente */
-}
-
-/* Efeito de tremer */
-@keyframes shake {
-    0% {
-        transform: translateX(0);
-    }
-    25% {
-        transform: translateX(-5px);
-    }
-    50% {
-        transform: translateX(0);
-    }
-    75% {
-        transform: translateX(5px);
-    }
-    100% {
-        transform: translateX(0);
-    }
-}
-
-/* Projetos Section */
-#Projetos {
-    background-size: cover; /* Ajusta a imagem para cobrir a área */
-    background-position: center; /* Ajusta a posição central da imagem */
-    color: #fff;
-    padding: 4rem 0; /* Padding superior e inferior */
-    position: relative;
-    font-family: "Poppins", sans-serif; /* Aplica a nova fonte */
-    overflow: hidden; /* Garante que o conteúdo não ultrapasse os limites */
-}
-
-/* Título da seção Projetos */
-#Projetos h2 {
-    font-size: 5rem; /* Aumenta o tamanho do título */
-    margin-bottom: 1rem; /* Adiciona mais espaço abaixo do título */
-    text-align: center; /* Centraliza o título */
-}
-
-/* Wrapper dos projetos */
-.Projetos-wrapper {
-    display: flex; /* Alinha os projetos em linha */
-    overflow-x: auto; /* Permite rolagem horizontal */
-    padding: 1rem; /* Adiciona padding ao redor dos projetos */
-}
-
-/* Contêiner do projeto */
-.Projetos-project {
-    flex: 0 0 auto; /* Impede que os projetos encolham */
-    width: 300px; /* Largura fixa para cada projeto */
-    margin-right: 30px; /* Espaçamento entre os projetos */
-    border-radius: 5px; /* Cantos arredondados */
-    overflow: hidden; /* Esconde qualquer conteúdo que saia do contêiner */
-    display: flex; /* Facilita o alinhamento interno */
-    flex-direction: column; /* Alinha o conteúdo verticalmente */
-    align-items: center; /* Centraliza os itens horizontalmente */
-    text-align: center; /* Centraliza o texto */
-    margin-bottom: 20px; /* Espaçamento entre projetos */
-}
-
-/* Estilo para o título do projeto */
-.project-title {
-    color: #fff; /* Cor do texto */
-    text-align: center; /* Centraliza o título */
-    font-size: 1.6rem; /* Tamanho do título do projeto */
-}
-
-/* Estilo para a imagem do projeto */
-.project-image {
-    width: 100%; /* Largura total do projeto */
-    height: 200px; /* Altura da imagem do projeto */
-    background-size: cover; /* Ajusta a imagem para cobrir a área */
-    background-position: center; /* Centraliza a imagem */
-    border-radius: 8px; /* Arredonda as pontas da imagem */
-}
-
-/* Contêiner do conteúdo do projeto */
-.project-details {
-    position: relative; /* Posiciona o conteúdo abaixo da imagem */
-    background: black; /* Fundo para melhor legibilidade */
-    color: #fff; /* Cor do texto */
-    text-align: center; /* Centraliza o texto */
-}
-
-.btn {
-    display: inline-block;
-    color: #fff; /* Cor do texto */
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border: 2px solid #fff; /* Define a cor do contorno (branco neste caso) */
-    border-radius: 5px; /* Cantos arredondados */
-    transition: transform 0.3s, border-color 0.3s; /* Transições suaves */
-    font-size: 1rem; /* Tamanho da fonte */
-    margin-top: 1rem; /* Espaço acima do botão */
-}
-
-/* Efeito hover no botão */
-.btn:hover {
-    transform: scale(1.05);
-    border-color: purple; /* Altera a cor do contorno no hover (exemplo: laranja) */
-}
-
-/* Botões de navegação do portfólio */
-.nav-left,
-.nav-right {
-    position: absolute;
-    top: 50%;
-    font-size: 2rem;
-    background: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
-    border-radius: 50%;
-    z-index: 10; /* Garante que os botões fiquem acima do conteúdo */
-}
-
-.nav-left {
-    left: 1rem; /* Ajuste conforme necessário */
-}
-
-.nav-right {
-    right: 1rem; /* Ajuste conforme necessário */
-}
-
-.nav-left:hover,
-.nav-right:hover {
-    transform: scale(1.2);
-}
-
-/* Contatos Section */
-#contact {
-    /* background: url("../images/FundoDegrade_2.png") no-repeat center center; */
-    background-size: cover; /* Ajusta a imagem para cobrir a área */
-    background-position: center 30%; /* Ajusta a posição vertical da imagem */
-    color: #fff;
-    padding: 4rem 0;
-    font-size: 2.2rem; /* Aumenta o tamanho do texto na seção Contatos */
-    overflow: hidden; /* Garante que o conteúdo não ultrapasse os limites */
-    position: relative; /* Adiciona contexto para o posicionamento de elementos internos */
-}
-
-#contact h2 {
-    margin-bottom: 1rem; /* Ajuste o valor conforme necessário */
-    /* Opcional: ajuste o tamanho do título se necessário */
-    font-size: 5rem; /* Ajuste conforme o tamanho desejado */
-    text-shadow: 5px 5px 8px black; /* Sombra preta do texto para dar efeito de profundidade */
-}
-
-#contact.reveal {
-    background-color: rgb(112, 3, 83); /* Cor roxa para Contact */
-}
-
-.contact-list {
-    list-style: none;
-    padding: 0;
-}
-
-.contact-list li {
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-    font-size: 3rem; /* Aumenta o tamanho da fonte */
-    margin-bottom: 2rem; /* Adiciona espaço entre os itens da lista */
-}
-
-.contact-list i {
-    font-size: 3rem; /* Aumenta o tamanho dos ícones */
-}
-
-.contact-list .fa-envelope {
-    color: #8c8c3f; /* Cor bege para o ícone de e-mail */
-}
-
-.contact-list a {
-    color: #fff;
-    text-decoration: none;
-}
-
-/* Footer */
 footer {
-    background: #000;
-    color: #fff;
+    background-color: #4b2e2e; /* Marrom escuro */
+    color: white;
     text-align: center;
-    padding: 1rem 0;
+    padding: 10px 0;
+    width: 100%;
+}
+
+/* Media query para telas menores */
+@media (max-width: 600px) {
+    nav ul li {
+        margin: 0 5px; /* Reduz o espaço entre os itens do menu em telas menores */
+    }
+
+    nav ul li a {
+        font-size: 0.9em; /* Reduz o tamanho da fonte em telas menores */
+    }
+
+    .home-content {
+        flex-direction: column; /* Alinha o conteúdo verticalmente em telas menores */
+        text-align: center;
+    }
+
+    .text-content,
+    .image-content {
+        max-width: 100%;
+    }
+
+    .image-content img {
+        margin-top: 20px;
+    }
+
+    .text-content h1 {
+        font-size: 2em; /* Ajusta o tamanho do título em telas menores */
+    }
+
+    .text-content h2 {
+        font-size: 1.5em; /* Ajusta o tamanho do subtítulo em telas menores */
+    }
 }
