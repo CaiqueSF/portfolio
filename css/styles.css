@@ -4,8 +4,8 @@ html {
     padding: 0;
     height: 100%;
     width: 100%;
-    font-family: Arial, sans-serif;
-    background-image: url("../images/fundo_1.jpg");
+    font-family: "Roboto", sans-serif; /* Define a fonte Roboto */
+    background-image: url("../images/fundo.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Garante que a imagem de fundo permaneça fixa ao rolar */
@@ -14,7 +14,7 @@ html {
 
 header {
     background-color: #4b2e2e; /* Marrom escuro */
-    padding: 10px 0;
+    padding: 20px 0; /* Aumenta o trecho de fundo marrom dos menus */
 }
 
 nav ul {
@@ -34,11 +34,16 @@ nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    font-size: 1.2em; /* Tamanho da fonte padrão */
+    font-size: 1.4em; /* Aumenta um pouco o tamanho da fonte das letras */
+}
+
+nav ul li a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+    text-decoration-color: white; /* Define a cor do sublinhado como branco */
 }
 
 .section {
-    padding: 60px 20px;
+    padding: 10px 20px; /* Subiu o conteúdo para ficar mais próximo dos menus */
     min-height: 100vh; /* Garante que cada seção ocupe pelo menos a altura da tela */
     display: flex;
     flex-direction: column;
@@ -51,26 +56,42 @@ nav ul li a {
     align-items: center;
     justify-content: space-between;
     width: 80%;
+    flex-wrap: wrap; /* Permite que os itens se ajustem corretamente em telas menores */
+    margin: 0 auto; /* Centraliza o conteúdo horizontalmente */
 }
 
 .text-content {
-    max-width: 50%;
+    max-width: 45%; /* Ajusta a largura máxima do texto */
+    flex: 1; /* Permite que o texto ocupe o espaço necessário */
+    text-align: center; /* Centraliza o texto */
+    margin-right: 25%; /* Adiciona mais espaço entre o texto e a imagem */
 }
 
 .text-content h1 {
-    font-size: 3em; /* Aumenta o tamanho do título */
+    font-size: 4.2em; /* Aumenta um pouco o tamanho do título */
     color: #4b2e2e; /* Marrom escuro */
+    white-space: nowrap; /* Garante que o texto não quebre linha */
+    margin-bottom: 0; /* Remove a margem inferior */
 }
 
 .text-content h2 {
-    font-size: 2em; /* Aumenta o tamanho do subtítulo */
+    font-size: 2.4em; /* Aumenta o tamanho do subtítulo */
     color: #4b2e2e; /* Marrom escuro */
+    margin-top: 0; /* Remove a margem superior */
+}
+
+.image-content {
+    max-width: 40%; /* Aumenta a largura máxima da imagem */
+    flex: 1; /* Permite que a imagem ocupe o espaço necessário */
+    display: flex;
+    justify-content: center;
 }
 
 .image-content img {
-    max-width: 100%;
+    max-width: 100%; /* Ajusta o tamanho da imagem */
     height: auto;
     border-radius: 50%; /* Torna a imagem circular */
+    max-height: 300px; /* Aumenta a altura máxima para a imagem */
 }
 
 footer {
@@ -82,15 +103,7 @@ footer {
 }
 
 /* Media query para telas menores */
-@media (max-width: 600px) {
-    nav ul li {
-        margin: 0 5px; /* Reduz o espaço entre os itens do menu em telas menores */
-    }
-
-    nav ul li a {
-        font-size: 0.9em; /* Reduz o tamanho da fonte em telas menores */
-    }
-
+@media (max-width: 800px) {
     .home-content {
         flex-direction: column; /* Alinha o conteúdo verticalmente em telas menores */
         text-align: center;
@@ -99,17 +112,26 @@ footer {
     .text-content,
     .image-content {
         max-width: 100%;
+        margin-right: 0; /* Remove a margem direita em telas menores */
     }
 
     .image-content img {
         margin-top: 20px;
+        max-width: 70%; /* Ajusta o tamanho da imagem em telas menores */
+        max-height: 200px; /* Ajusta a altura máxima da imagem em telas menores */
     }
 
     .text-content h1 {
-        font-size: 2em; /* Ajusta o tamanho do título em telas menores */
+        font-size: 2.1em; /* Ajusta o tamanho do título em telas menores */
+        white-space: normal; /* Permite que o texto quebre linha em telas menores */
     }
 
     .text-content h2 {
-        font-size: 1.5em; /* Ajusta o tamanho do subtítulo em telas menores */
+        font-size: 1.2em; /* Aumenta o tamanho do subtítulo em telas menores */
+    }
+
+    nav ul li a:hover {
+        text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+        text-decoration-color: white; /* Define a cor do sublinhado como branco */
     }
 }
