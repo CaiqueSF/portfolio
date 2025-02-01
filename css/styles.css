@@ -13,7 +13,7 @@ html {
 }
 
 header {
-    background-color: #4b2e2e; /* Marrom escuro */
+    background-color: transparent; /* Torna o fundo do menu transparente */
     padding: 20px 0; /* Aumenta o trecho de fundo marrom dos menus */
 }
 
@@ -31,7 +31,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: #4b2e2e;
     text-decoration: none;
     font-weight: bold;
     font-size: 1.4em; /* Aumenta um pouco o tamanho da fonte das letras */
@@ -39,7 +39,7 @@ nav ul li a {
 
 nav ul li a:hover {
     text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
-    text-decoration-color: white; /* Define a cor do sublinhado como branco */
+    text-decoration-color: #4b2e2e; /* Define a cor do sublinhado */
 }
 
 .section {
@@ -65,19 +65,26 @@ nav ul li a:hover {
     flex: 1; /* Permite que o texto ocupe o espaço necessário */
     text-align: center; /* Centraliza o texto */
     margin-right: 25%; /* Adiciona mais espaço entre o texto e a imagem */
+    margin-top: -320px; /* Sobe o conteúdo para ficar mais próximo da borda superior */
 }
 
 .text-content h1 {
-    font-size: 4.2em; /* Aumenta um pouco o tamanho do título */
+    font-size: 5.5em; /* Tamanho do título */
     color: #4b2e2e; /* Marrom escuro */
     white-space: nowrap; /* Garante que o texto não quebre linha */
     margin-bottom: 0; /* Remove a margem inferior */
 }
 
 .text-content h2 {
-    font-size: 2.4em; /* Aumenta o tamanho do subtítulo */
+    font-size: 2.6em; /* Tamanho do subtítulo */
     color: #4b2e2e; /* Marrom escuro */
     margin-top: 0; /* Remove a margem superior */
+}
+
+.text-content p {
+    font-size: 1.3em; /* Tamanho da fonte do parágrafo */
+    color: #4b2e2e; /* Marrom escuro */
+    text-align: center; /* Centraliza o texto */
 }
 
 .image-content {
@@ -85,6 +92,7 @@ nav ul li a:hover {
     flex: 1; /* Permite que a imagem ocupe o espaço necessário */
     display: flex;
     justify-content: center;
+    margin-top: -70px; /* Sobe a imagem para ficar mais próxima da borda superior */
 }
 
 .image-content img {
@@ -92,6 +100,7 @@ nav ul li a:hover {
     height: auto;
     border-radius: 50%; /* Torna a imagem circular */
     max-height: 300px; /* Aumenta a altura máxima para a imagem */
+    margin-top: -200px; /* Sobe a imagem para ficar mais próxima da borda superior */
 }
 
 footer {
@@ -102,8 +111,197 @@ footer {
     width: 100%;
 }
 
-/* Media query para telas menores */
+/* ------------------------------- SOBRE ------------------------------- */
+#sobre {
+    padding: 20px 0; /* Reduz o padding para aproximar a seção SOBRE da seção HOME */
+    margin-top: -280px; /* Ajusta a margem superior para aproximar a seção SOBRE da seção HOME */
+    text-align: center; /* Centraliza o texto */
+}
+
+#sobre h1,
+#sobre h2,
+#sobre p {
+    font-size: 1.8em; /* Aumenta o tamanho da fonte */
+}
+
+#sobre h1 {
+    font-size: 3.5em; /* Aumenta o tamanho do título "SOBRE" */
+    margin-bottom: 1px; /* Diminui o espaço entre o título e o conteúdo */
+}
+
+#sobre p {
+    max-width: 70%; /* Limita a largura do parágrafo */
+    margin: 0 auto; /* Centraliza o parágrafo */
+}
+
+.download-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 0.8em;
+    color: #4b2e2e; /* Cor das letras marrom */
+    background-color: white; /* Fundo branco */
+    border: 2px solid #4b2e2e; /* Borda marrom */
+    border-radius: 10px; /* Cantos arredondados */
+    text-decoration: none;
+    transition: transform 0.3s; /* Transição suave para o efeito de zoom */
+}
+
+.download-button:hover {
+    transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+    color: white; /* Cor das letras branca */
+    background-color: #4b2e2e; /* Fundo marrom */
+    border: 2px solid white; /* Borda branca */
+}
+
+/* ------------------------------- HABILIDADES ------------------------------- */
+#habilidades {
+    padding: 20px 0; /* Ajusta o padding para a seção HABILIDADES */
+    text-align: center; /* Centraliza o texto */
+}
+
+#habilidades h1,
+#habilidades h2,
+#habilidades p {
+    font-size: 1.8em; /* Aumenta o tamanho da fonte */
+}
+
+#habilidades h1 {
+    font-size: 3.5em; /* Aumenta o tamanho do título "HABILIDADES" */
+}
+
+#habilidades p {
+    max-width: 70%; /* Limita a largura do parágrafo */
+    margin: 0 auto; /* Centraliza o parágrafo */
+}
+
+/* ------------------------------- PROJETOS ------------------------------- */
+#projetos {
+    padding: 20px 0; /* Ajusta o padding para a seção PROJETOS */
+    text-align: center; /* Centraliza o texto */
+}
+
+#projetos h1,
+#projetos h2,
+#projetos p {
+    font-size: 1.8em; /* Aumenta o tamanho da fonte */
+}
+
+#projetos h1 {
+    font-size: 3.5em; /* Aumenta o tamanho do título "PROJETOS" */
+}
+
+#projetos p {
+    max-width: 70%; /* Limita a largura do parágrafo */
+    margin: 0 auto; /* Centraliza o parágrafo */
+}
+
+/* ------------------------------- CONTATOS ------------------------------- */
+#contatos {
+    padding: 20px 0; /* Ajusta o padding para a seção CONTATOS */
+    text-align: center; /* Centraliza o texto */
+}
+
+#contatos h1,
+#contatos h2,
+#contatos p {
+    font-size: 1.8em; /* Aumenta o tamanho da fonte */
+}
+
+#contatos h1 {
+    font-size: 3.5em; /* Aumenta o tamanho do título "CONTATOS" */
+}
+
+#contatos p {
+    max-width: 70%; /* Limita a largura do parágrafo */
+    margin: 0 auto; /* Centraliza o parágrafo */
+}
+
+/* ------------------- Media query para telas menores ------------------- */
 @media (max-width: 800px) {
+    #sobre {
+        padding: 20px 0; /* Ajusta o padding para a seção SOBRE */
+        margin-top: -180px; /* Ajusta a margem superior para aproximar a seção SOBRE da seção HOME em telas menores */
+        text-align: center; /* Centraliza o texto */
+    }
+
+    #sobre h1,
+    #sobre h2,
+    #sobre p {
+        font-size: 1.3em; /* Aumenta o tamanho da fonte */
+    }
+
+    #sobre h1 {
+        font-size: 2.8em; /* Aumenta o tamanho do título "SOBRE" */
+    }
+
+    #sobre p {
+        max-width: 70%; /* Limita a largura do parágrafo */
+        margin: 0 auto; /* Centraliza o parágrafo */
+    }
+
+    #habilidades {
+        padding: 20px 0; /* Ajusta o padding para a seção HABILIDADES */
+        margin-top: -180px; /* Ajusta a margem superior para aproximar a seção HABILIDADES da seção SOBRE em telas menores */
+        text-align: center; /* Centraliza o texto */
+    }
+
+    #habilidades h1,
+    #habilidades h2,
+    #habilidades p {
+        font-size: 1.3em; /* Aumenta o tamanho da fonte */
+    }
+
+    #habilidades h1 {
+        font-size: 2.8em; /* Aumenta o tamanho do título "HABILIDADES" */
+    }
+
+    #habilidades p {
+        max-width: 70%; /* Limita a largura do parágrafo */
+        margin: 0 auto; /* Centraliza o parágrafo */
+    }
+
+    #projetos {
+        padding: 20px 0; /* Ajusta o padding para a seção PROJETOS */
+        margin-top: -180px; /* Ajusta a margem superior para aproximar a seção PROJETOS da seção HABILIDADES em telas menores */
+        text-align: center; /* Centraliza o texto */
+    }
+
+    #projetos h1,
+    #projetos h2,
+    #projetos p {
+        font-size: 1.3em; /* Aumenta o tamanho da fonte */
+    }
+
+    #projetos h1 {
+        font-size: 2.8em; /* Aumenta o tamanho do título "PROJETOS" */
+    }
+
+    #projetos p {
+        max-width: 70%; /* Limita a largura do parágrafo */
+        margin: 0 auto; /* Centraliza o parágrafo */
+    }
+
+    #contatos {
+        padding: 20px 0; /* Ajusta o padding para a seção CONTATOS */
+        margin-top: -180px; /* Ajusta a margem superior para aproximar a seção CONTATOS da seção PROJETOS em telas menores */
+        text-align: center; /* Centraliza o texto */
+    }
+
+    #contatos h1,
+    #contatos h2,
+    #contatos p {
+        font-size: 1.3em; /* Aumenta o tamanho da fonte */
+    }
+
+    #contatos h1 {
+        font-size: 2.8em; /* Aumenta o tamanho do título "CONTATOS" */
+    }
+
+    #contatos p {
+        max-width: 70%; /* Limita a largura do parágrafo */
+        margin: 0 auto; /* Centraliza o parágrafo */
+    }
+
     .home-content {
         flex-direction: column; /* Alinha o conteúdo verticalmente em telas menores */
         text-align: center;
@@ -116,22 +314,43 @@ footer {
     }
 
     .image-content img {
-        margin-top: 20px;
-        max-width: 70%; /* Ajusta o tamanho da imagem em telas menores */
+        margin-top: 100px;
+        max-width: 90%; /* Ajusta o tamanho da imagem em telas menores */
         max-height: 200px; /* Ajusta a altura máxima da imagem em telas menores */
     }
 
+    .text-content {
+        margin-top: -250px; /* Ajusta a margem superior do conteúdo em telas menores */
+    }
+
     .text-content h1 {
-        font-size: 2.1em; /* Ajusta o tamanho do título em telas menores */
+        font-size: 2.9em; /* Ajusta o tamanho do título em telas menores */
         white-space: normal; /* Permite que o texto quebre linha em telas menores */
     }
 
     .text-content h2 {
-        font-size: 1.2em; /* Aumenta o tamanho do subtítulo em telas menores */
+        font-size: 1.5em; /* Aumenta o tamanho do subtítulo em telas menores */
+    }
+
+    .text-content p {
+        font-size: 1.3em; /* Aumenta o tamanho do subtítulo em telas menores */
     }
 
     nav ul li a:hover {
         text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
-        text-decoration-color: white; /* Define a cor do sublinhado como branco */
+        text-decoration-color: #4b2e2e; /* Define a cor do sublinhado */
     }
+}
+
+/* Inicialmente, o conteúdo está invisível e deslocado */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+/* Quando a classe 'visible' é adicionada, o conteúdo fica visível e na posição correta */
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
