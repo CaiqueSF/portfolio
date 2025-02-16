@@ -114,7 +114,7 @@ footer {
 /* ------------------------------- SOBRE ------------------------------- */
 #sobre {
     padding: 20px 0; /* Reduz o padding para aproximar a seção SOBRE da seção HOME */
-    margin-top: -280px; /* Ajusta a margem superior para aproximar a seção SOBRE da seção HOME */
+    margin-top: -290px; /* Ajusta a margem superior para aproximar a seção SOBRE da seção HOME */
     text-align: center; /* Centraliza o texto */
 }
 
@@ -157,27 +157,83 @@ footer {
 #habilidades {
     padding: 20px 0; /* Ajusta o padding para a seção HABILIDADES */
     text-align: center; /* Centraliza o texto */
-}
-
-#habilidades h1,
-#habilidades h2,
-#habilidades p {
-    font-size: 1.8em; /* Aumenta o tamanho da fonte */
+    margin-top: -110px; /* Ajusta a margem superior para aproximar a seção HABILIDADES da seção SOBRE */
 }
 
 #habilidades h1 {
     font-size: 3.5em; /* Aumenta o tamanho do título "HABILIDADES" */
 }
 
+#habilidades h2 {
+    font-size: 1.8em; /* Aumenta o tamanho da fonte dos subtítulos */
+}
+
 #habilidades p {
+    font-size: 1.8em; /* Aumenta o tamanho da fonte dos parágrafos */
     max-width: 70%; /* Limita a largura do parágrafo */
     margin: 0 auto; /* Centraliza o parágrafo */
+}
+
+.habilidades-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.habilidade {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.habilidade h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.imagens {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.imagens img {
+    max-width: 100px;
+    height: auto;
+}
+
+/* Adicione esta seção para definir a animação de tremer horizontalmente */
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(0);
+    }
+    75% {
+        transform: translateX(5px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Adicione esta regra para aplicar a animação ao passar o mouse */
+.imagens img:hover {
+    animation: shake 0.5s infinite; /* Define a duração da animação e faz a animação repetir indefinidamente enquanto o mouse estiver sobre a imagem */
 }
 
 /* ------------------------------- PROJETOS ------------------------------- */
 #projetos {
     padding: 20px 0; /* Ajusta o padding para a seção PROJETOS */
     text-align: center; /* Centraliza o texto */
+    margin-top: -330px; /* Ajusta a margem superior para aproximar a seção PROJETOS da seção HABILIDADES */
 }
 
 #projetos h1,
@@ -220,7 +276,7 @@ footer {
 @media (max-width: 800px) {
     #sobre {
         padding: 20px 0; /* Ajusta o padding para a seção SOBRE */
-        margin-top: -180px; /* Ajusta a margem superior para aproximar a seção SOBRE da seção HOME em telas menores */
+        margin-top: -250px; /* Ajusta a margem superior para aproximar a seção SOBRE da seção HOME em telas menores */
         text-align: center; /* Centraliza o texto */
     }
 
@@ -241,23 +297,30 @@ footer {
 
     #habilidades {
         padding: 20px 0; /* Ajusta o padding para a seção HABILIDADES */
-        margin-top: -180px; /* Ajusta a margem superior para aproximar a seção HABILIDADES da seção SOBRE em telas menores */
+        margin-top: 0px; /* Ajusta a margem superior para aproximar a seção HABILIDADES da seção SOBRE em telas menores */
         text-align: center; /* Centraliza o texto */
-    }
-
-    #habilidades h1,
-    #habilidades h2,
-    #habilidades p {
-        font-size: 1.3em; /* Aumenta o tamanho da fonte */
     }
 
     #habilidades h1 {
         font-size: 2.8em; /* Aumenta o tamanho do título "HABILIDADES" */
     }
 
+    #habilidades h2 {
+        font-size: 1.8em; /* Aumenta o tamanho da fonte */
+    }
+
     #habilidades p {
+        font-size: 1.3em; /* Aumenta o tamanho da fonte */
         max-width: 70%; /* Limita a largura do parágrafo */
         margin: 0 auto; /* Centraliza o parágrafo */
+    }
+
+    .habilidade {
+        margin-bottom: 30px; /* Adiciona espaço entre as partes */
+    }
+
+    .habilidade h2 {
+        font-size: 2em; /* Aumenta o tamanho dos subtítulos */
     }
 
     #projetos {
