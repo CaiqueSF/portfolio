@@ -14,7 +14,7 @@ html {
 
 header {
     background-color: transparent; /* Torna o fundo do menu transparente */
-    padding: 20px 0; /* Aumenta o trecho de fundo marrom dos menus */
+    padding: 40px 0; /* Aumenta o trecho de fundo marrom dos menus */
 }
 
 nav ul {
@@ -233,7 +233,7 @@ footer {
 #projetos {
     padding: 20px 0; /* Ajusta o padding para a seção PROJETOS */
     text-align: center; /* Centraliza o texto */
-    margin-top: -330px; /* Ajusta a margem superior para aproximar a seção PROJETOS da seção HABILIDADES */
+    margin-top: -220px; /* Ajusta a margem superior para aproximar a seção PROJETOS da seção HABILIDADES */
 }
 
 #projetos h1,
@@ -251,16 +251,90 @@ footer {
     margin: 0 auto; /* Centraliza o parágrafo */
 }
 
+.projetos-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    position: relative;
+}
+
+.projetos-wrapper {
+    display: flex;
+    overflow: hidden; /* Remove a barra de rolagem */
+    scroll-behavior: smooth;
+    gap: 5px; /* Diminui o espaço entre as imagens */
+}
+
+.projeto {
+    flex: 0 0 auto;
+    min-width: 0; /* Diminui a largura mínima */
+    width: 250px;
+    text-align: center;
+}
+
+.arrow {
+    background-color: transparent;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #4b2e2e;
+    z-index: 1;
+}
+
+.left-arrow {
+    left: -300px;
+}
+
+.right-arrow {
+    right: -300px;
+}
+
+.projeto img {
+    width: 200px; /* Define a largura fixa das imagens para 150px */
+    height: auto; /* Ajusta a altura automaticamente para manter a proporção */
+    border-radius: 10px;
+    transition: transform 0.3s;
+    display: block;
+    margin: 0 auto;
+}
+
+.projeto img:hover {
+    transform: scale(1.05); /* Aumenta um pouco a imagem ao passar o mouse */
+}
+
+.github-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1.2em; /* Aumenta um pouco o tamanho da fonte */
+    color: #4b2e2e; /* Cor da escrita marrom */
+    background-color: transparent; /* Remove o fundo */
+    border: none; /* Remove a borda */
+    text-decoration: none;
+    font-weight: bold; /* Deixa as letras em negrito */
+    transition: color 0.3s, text-decoration 0.3s;
+}
+
+.github-button:hover {
+    color: #4b2e2e; /* Cor da escrita ao passar o mouse */
+    text-decoration: underline 2px; /* Adiciona sublinhado ao passar o mouse e deixa mais grosso */
+}
+
 /* ------------------------------- CONTATOS ------------------------------- */
 #contatos {
     padding: 20px 0; /* Ajusta o padding para a seção CONTATOS */
     text-align: center; /* Centraliza o texto */
+    margin-top: -200px; /* Ajusta a margem superior para aproximar a seção CONTATOS da seção PROJETOS */
 }
 
 #contatos h1,
 #contatos h2,
 #contatos p {
-    font-size: 1.8em; /* Aumenta o tamanho da fonte */
+    font-size: 2em; /* Aumenta o tamanho da fonte */
 }
 
 #contatos h1 {
@@ -270,6 +344,38 @@ footer {
 #contatos p {
     max-width: 70%; /* Limita a largura do parágrafo */
     margin: 0 auto; /* Centraliza o parágrafo */
+    font-weight: bold; /* Deixa o subtítulo em negrito */
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-list li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 25px 0;
+    font-size: 1.8em; /* Aumenta o tamanho da fonte */
+}
+
+.contact-list i {
+    margin-right: 10px;
+    font-size: 1.5em;
+}
+
+.contact-list .fa-whatsapp {
+    margin-left: 20px; /* Adiciona espaço entre o telefone e o ícone do WhatsApp */
+}
+
+.contact-list a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.contact-list a:hover {
+    text-decoration: underline;
 }
 
 /* ------------------- Media query para telas menores ------------------- */

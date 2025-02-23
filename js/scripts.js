@@ -20,4 +20,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     window.addEventListener('scroll', revealOnScroll);
     revealOnScroll(); // Executa no carregamento
+
+    // Adiciona funcionalidade das setas
+    document.querySelector('.left-arrow').addEventListener('click', function() {
+        document.querySelector('.projetos-wrapper').scrollBy({
+            left: -300,
+            behavior: 'smooth'
+        });
+    });
+
+    document.querySelector('.right-arrow').addEventListener('click', function() {
+        document.querySelector('.projetos-wrapper').scrollBy({
+            left: 300,
+            behavior: 'smooth'
+        });
+    });
 });
