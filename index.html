@@ -3,130 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio - Caíque de S. Ferreira</title>
+    <title>Portfolio</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta name="description" content="Portfólio de Caíque Ferreira, Desenvolvedor Back-end com conhecimentos em Python, C#, AWS, e mais.">
+    <meta name="keywords" content="Caíque Ferreira, Desenvolvedor Back-end, Python, C#, AWS, Portfólio">
+    <meta name="author" content="Caíque Ferreira">
 </head>
 <body>
-    <!-- Navbar -->
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">Sobre</a></li>
-            <li><a href="#skills">Habilidades</a></li>
-            <li><a href="#Projetos">Projetos</a></li>
-            <li><a href="#contact">Contato</a></li>
-        </ul>
-    </nav>
-
-    <!-- Home Section -->
-    <section id="home">
-        <div class="background-image">
-            <img src="RedesNeuraisHome.jpg" alt="Background">
-        </div>
-        <div class="content reveal">
-            <h1>Olá, eu sou Caíque Ferreira</h1>
-            <p>Desenvolvedor Back-end</p>
-        </div>
-        <div class="photo-placeholder">
-            <img src="images/minha-foto.png" alt="Minha Foto">
-        </div>
-    </section>
-
-    <!-- Sobre Section -->
-    <section id="about">
-        <div class="content reveal">
-            <h2>Sobre Mim</h2>
-            <p>Me chamo Caíque Ferreira, sou formado técnico e engenheiro eletrônico com mais de dez anos de atuação e experiência na área da tecnologia. Atualmente estou no 2º semestre no curso de Análise e Desenvolvimento de Sistemas na UNICSUL.<br><br>
-            Tenho conhecimentos em Python e C# para desenvolvimento back-end e habilidades na plataforma de computação em nuvem AWS. Realizo a análise e processamento ETL de Big Data com Python e SQL/NoSQL, utilizando os SGBDs SQLite, SQL Server, MySQL, PostgreSQL e MongoDB. Desenvolvo firmware para microcontroladores da família PIC e ATMEL (ATMEGA328) utilizando as linguagens C/C++. Atuo nos ambientes operacionais Linux ou Windows e possuo conhecimentos avançados no pacote Office da Microsoft (Excel, Word e PowerPoint).</p>
-            <a href="docs/Curriculo Caíque Ferreira.pdf" target="_blank" class="resume-button"><strong>Baixar Currículo</strong></a>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="content reveal">
-            <h2>Habilidades</h2>
-            <ul class="skills-list">
-                <li>
-                    <img src="images/python.png" alt="Python">
-                </li>
-                <li>
-                    <img src="images/csharp.png" alt="C#">
-                </li>
-                <li>
-                    <img src="images/c.png" alt="C">
-                </li>
-                <li>
-                    <img src="images/cplusplus.png" alt="C++">
-                </li>
-                <li>
-                    <img src="images/sqlserver.png" alt="SQL Server">
-                </li>
-                <li>
-                    <img src="images/postgresql.png" alt="PostgreSQL">
-                </li>
-                <li>
-                    <img src="images/mysql.png" alt="MySQL">
-                </li>
-                <li>
-                    <img src="images/sqlite.png" alt="SQLite">
-                </li>
-                <li>
-                    <img src="images/mongodb.png" alt="MongoDB">
-                </li>
-                <li>
-                    <img src="images/powerbi.png" alt="MongoDB">
-                </li>
+    <header>
+        <nav role="navigation">
+            <ul>
+                <li><a href="#inicio">INÍCIO</a></li>
+                <li><a href="#sobre">SOBRE</a></li>
+                <li><a href="#habilidades">HABILIDADES</a></li>
+                <li><a href="#projetos">PROJETOS</a></li>
+                <li><a href="#contatos">CONTATOS</a></li>
             </ul>
-        </div>
-    </section>
-
-    <!-- Projetos Section -->
-    <section id="Projetos">
-        <div class="content reveal">
-            <h2>Projetos</h2>
-            <div class="Projetos-wrapper">
-                <div class="Projetos-project">
-                    <div class="project-image" style="background-image: url('images/project1.png');"></div>
-                    <a href="https://github.com/CaiqueSF/codding_md5_sha256" target="_blank" class="btn">Ver no GitHub</a>
-                </div>
-                <div class="Projetos-project">
-                    <a href="https://caiquesf.github.io/codigo-aberto/" target="_blank" class="project-image" style="background-image: url('images/project2.png');">
-                    </a>
-                    <a href="https://github.com/CaiqueSF/codigo-aberto" target="_blank" class="btn">Ver no GitHub</a>
+        </nav>
+    </header>
+    <main role="main">
+        <div id="inicio" class="section reveal">
+            <div class="inicio-content">
+                <div class="text-content reveal visible"> <!-- Adicionando visible por segurança -->
+                    <h1 id="title" class="typing-effect">Caíque Ferreira</h1>
+                    <h2 id="subtitle" class="typing-effect">Desenvolvedor Back-end</h2>
+                    <p id="description" class="typing-effect">
+                        Olá, seja bem-vindo ao meu portfólio!<br><br>
+                        Meu nome é Caíque de Sousa Ferreira,<br>
+                        sou Engenheiro Eletrônico, e atuo como <br>
+                        Engenheiro de Software Jr no Itaú Unibanco.
+                    </p>
+                </div>            
+                <div class="image-content">
+                    <img src="images/minha-foto.png" alt="Foto de Caíque Ferreira" loading="lazy" class="inicio-image">
                 </div>
             </div>
-            <button class="nav-left" onclick="scrollLeft()"><i class="fas fa-chevron-left"></i></button>
-            <button class="nav-right" onclick="scrollRight()"><i class="fas fa-chevron-right"></i></button>
         </div>
-    </section>
-
-    <!-- Contato Section -->
-    <section id="contact">
-        <div class="content reveal">
-            <h2>Contato</h2>
+        <div id="sobre" class="section reveal">
+            <h1>SOBRE</h1>
+            <p><br>Possuo conhecimentos em Python e C# para desenvolvimento back-end e habilidades na plataforma de computação em nuvem AWS. Realizo a análise e processamento ETL de Big Data com Python e SQL/NoSQL, utilizando os SGBDs SQLite, SQL Server, MySQL, PostgreSQL e MongoDB.</p>
+            <p><br>Desenvolvo firmware para microcontroladores da família PIC e ATMEL (ATMEGA328) utilizando as linguagens C/C++. Atuo nos ambientes operacionais Linux ou Windows e possuo conhecimentos avançados no pacote Office da Microsoft (Excel, Word e PowerPoint).</p>
+            <p><br>Atualmente, estou cursando o terceiro semestre de Análise e Desenvolvimento de Sistemas na Universidade Cruzeiro do Sul.</p>
+            <p><br><a href="docs/Curriculo Caíque Ferreira.pdf" class="download-button" target="_blank">Baixar Currículo</a></p>
+        </div>
+        <div id="habilidades" class="section reveal">
+            <h1>HABILIDADES</h1>
+            <div class="habilidades-container">
+                <div class="habilidade">
+                    <h2>Back-end | Cloud Computing</h2>
+                    <div class="imagens">
+                        <img src="images/python.png" alt="Logo do Python" loading="lazy">
+                        <img src="images/csharp.png" alt="Logo do C#" loading="lazy">
+                        <img src="images/aws.png" alt="Logo da AWS" loading="lazy">
+                    </div>
+                </div>
+                <div class="habilidade">
+                    <h2>Data & Analytics | SGBDs</h2>
+                    <div class="imagens">
+                        <img src="images/sqlserver.png" alt="Logo do SQL Server" loading="lazy">
+                        <img src="images/postgresql.png" alt="Logo do PostgreSQL" loading="lazy">
+                        <img src="images/mysql.png" alt="Logo do MySQL" loading="lazy">
+                        <img src="images/sqlite.png" alt="Logo do SQLite" loading="lazy">
+                        <img src="images/mongodb.png" alt="Logo do MongoDB" loading="lazy">
+                        <img src="images/powerbi.png" alt="Logo do Power BI" loading="lazy">
+                    </div>
+                </div>
+                <div class="habilidade">
+                    <h2>Sistemas Embarcados</h2>
+                    <div class="imagens">
+                        <img src="images/c.png" alt="Logo da Linguagem C" loading="lazy">
+                        <img src="images/cplusplus.png" alt="Logo da Linguagem C++" loading="lazy">
+                        <img src="images/arduino.png" alt="Logo do Arduino" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="projetos" class="section reveal">
+            <h1>PROJETOS</h1>
+            <div class="projetos-container">
+                <button class="arrow left-arrow">&lt;</button>
+                <div class="projetos-wrapper">
+                    <div class="projeto" id="projeto1">
+                        <img src="images/project1.png" alt="Imagem do Projeto 1" loading="lazy">
+                        <a href="https://github.com/CaiqueSF/codding_md5_sha256" target="_blank" class="github-button">Abrir no GitHub</a>
+                    </div>
+                    <div id="projeto2" class="projeto">
+                        <a href="https://caiquesf.github.io/codigo-aberto/" target="_blank">
+                            <img src="images/project2.png" alt="Imagem do Projeto 2" loading="lazy">
+                        </a>
+                        <a href="https://github.com/CaiqueSF/codigo-aberto" target="_blank" class="github-button">Abrir no GitHub</a>
+                    </div>
+                </div>
+                <button class="arrow right-arrow">&gt;</button>
+            </div>
+        </div>    
+        <div id="contatos" class="section reveal">
+            <h1>CONTATOS</h1>
             <p>Você pode me encontrar através dos seguintes canais:</p>
             <ul class="contact-list">
                 <li>
-                    <i class="fas fa-envelope" style="color: beige;"></i> <a href="mailto:caiquedesousaferreira@gmail.com">caiquedesousaferreira@gmail.com</a>
+                    <i class="fas fa-envelope" aria-hidden="true" style="color: #4b2e2e;"></i> <span>caiquedesousaferreira@gmail.com</span>
                 </li>
                 <li>
-                    <i class="fab fa-linkedin" style="color: #0077b5;"></i> <a href="https://www.linkedin.com/in/ca%C3%ADque-de-s-ferreira-48105b18b/" target="_blank">Caíque de S. Ferreira</a>
+                    <a href="https://www.linkedin.com/in/ca%C3%ADque-de-s-ferreira-48105b18b/" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin" aria-hidden="true" style="color: #0077b5;"></i>
+                    </a>
+                    <span>Caíque de S. Ferreira</span>
                 </li>
                 <li>
-                    <i class="fab fa-github" style="color: #333;"></i> <a href="https://github.com/CaiqueSF" target="_blank">CaiqueSF</a>
+                    <a href="https://github.com/CaiqueSF" target="_blank" aria-label="GitHub">
+                        <i class="fab fa-github" aria-hidden="true" style="color: #000;"></i>
+                    </a>
+                    <span>CaiqueSF</span>
                 </li>
                 <li>
-                    <i class="fas fa-phone-alt" style="color: white;"></i> (11) 96733-9720 <i class="fab fa-whatsapp" style="color: #25D366;"></i>
+                    <i class="fas fa-phone" aria-hidden="true" style="color: #4b2e2e;"></i> <span>(11) 96733-9720</span>
+                    <a href="https://wa.me/5511967339720" target="_blank" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp" aria-hidden="true" style="color: #25d366;"></i>
+                    </a>
                 </li>
             </ul>
         </div>
-    </section>
-
-    <!-- Footer -->
+    </main>
     <footer>
-        <p>&copy; 2024 Caíque de Sousa Ferreira. Todos os direitos reservados.</p>
+        <p><small>© 2025 Caíque de Sousa Ferreira. Todos os direitos reservados.</small></p>
     </footer>
     <script src="js/scripts.js"></script>
 </body>
