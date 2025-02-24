@@ -1,4 +1,7 @@
-body,
+body {
+    background-attachment: scroll; /* Melhor performance em dispositivos móveis */
+}
+
 html {
     margin: 0;
     padding: 0;
@@ -51,7 +54,28 @@ nav ul li a:hover {
     align-items: center;
 }
 
-.home-content {
+footer {
+    background-color: transparent; /* Remove a cor de fundo marrom */
+    color: #4b2e2e; /* Define a cor do texto como marrom */
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    font-size: 1.2em; /* Aumenta o tamanho da fonte */
+    font-weight: bold; /* Deixa o texto em negrito */
+}
+
+/* ------------------------------- INICIO ------------------------------- */
+#inicio {
+    padding: 20px 0;
+    text-align: center; /* Centraliza o texto */
+    min-height: 100vh; /* Garante que a seção ocupe pelo menos a altura da tela */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inicio-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -64,8 +88,14 @@ nav ul li a:hover {
     max-width: 45%; /* Ajusta a largura máxima do texto */
     flex: 1; /* Permite que o texto ocupe o espaço necessário */
     text-align: center; /* Centraliza o texto */
-    margin-right: 25%; /* Adiciona mais espaço entre o texto e a imagem */
-    margin-top: -320px; /* Sobe o conteúdo para ficar mais próximo da borda superior */
+    margin-right: 0; /* Remove a margem direita */
+    margin-top: -300px; /* Sobe o conteúdo para não sobrescrever a seção SOBRE */
+    z-index: 1; /* Garante que o texto fique acima de outros elementos */
+    position: relative; /* Garante que o texto seja posicionado corretamente */
+    color: #4b2e2e; /* Garante que a cor do texto seja marrom escuro */
+    visibility: visible; /* Garante que o texto seja visível */
+    opacity: 1; /* Garante que o texto seja opaco */
+    display: block; /* Garante que o texto seja exibido */
 }
 
 .text-content h1 {
@@ -82,9 +112,10 @@ nav ul li a:hover {
 }
 
 .text-content p {
-    font-size: 1.3em; /* Tamanho da fonte do parágrafo */
+    font-size: 1.6em; /* Tamanho da fonte do parágrafo */
     color: #4b2e2e; /* Marrom escuro */
     text-align: center; /* Centraliza o texto */
+    margin-top: 0; /* Remove a margem superior */
 }
 
 .image-content {
@@ -92,7 +123,7 @@ nav ul li a:hover {
     flex: 1; /* Permite que a imagem ocupe o espaço necessário */
     display: flex;
     justify-content: center;
-    margin-top: -70px; /* Sobe a imagem para ficar mais próxima da borda superior */
+    margin-top: -300px; /* Sobe a imagem para ficar mais próxima da borda superior */
 }
 
 .image-content img {
@@ -100,21 +131,13 @@ nav ul li a:hover {
     height: auto;
     border-radius: 50%; /* Torna a imagem circular */
     max-height: 300px; /* Aumenta a altura máxima para a imagem */
-    margin-top: -200px; /* Sobe a imagem para ficar mais próxima da borda superior */
-}
-
-footer {
-    background-color: #4b2e2e; /* Marrom escuro */
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    width: 100%;
+    margin-top: 0; /* Remove a margem superior negativa */
 }
 
 /* ------------------------------- SOBRE ------------------------------- */
 #sobre {
-    padding: 20px 0; /* Reduz o padding para aproximar a seção SOBRE da seção HOME */
-    margin-top: -290px; /* Ajusta a margem superior para aproximar a seção SOBRE da seção HOME */
+    padding: 20px 0;
+    margin-top: -290px;
     text-align: center; /* Centraliza o texto */
 }
 
@@ -233,7 +256,7 @@ footer {
 #projetos {
     padding: 20px 0; /* Ajusta o padding para a seção PROJETOS */
     text-align: center; /* Centraliza o texto */
-    margin-top: -220px; /* Ajusta a margem superior para aproximar a seção PROJETOS da seção HABILIDADES */
+    margin-top: -185px; /* Ajusta a margem superior para aproximar a seção PROJETOS da seção HABILIDADES */
 }
 
 #projetos h1,
@@ -263,16 +286,24 @@ footer {
     display: flex;
     overflow: hidden; /* Remove a barra de rolagem */
     scroll-behavior: smooth;
-    gap: 5px; /* Diminui o espaço entre as imagens */
+    gap: 100px; /* Diminui o espaço entre as imagens */
 }
 
 .projeto {
     flex: 0 0 auto;
     min-width: 0; /* Diminui a largura mínima */
-    width: 250px;
+    width: 300px;
     text-align: center;
 }
 
+/* Responsividade para telas maiores, desabilitando rolagem com apenas dois projetos */
+@media (min-width: 1024px) {
+    .projetos-wrapper {
+        overflow: visible; /* Garante que não apareça a rolagem */
+    }
+}
+
+/* Adicionando visibilidade para as setas */
 .arrow {
     background-color: transparent;
     border: none;
@@ -283,6 +314,7 @@ footer {
     transform: translateY(-50%);
     color: #4b2e2e;
     z-index: 1;
+    display: none; /* Esconde as setas inicialmente */
 }
 
 .left-arrow {
@@ -294,7 +326,7 @@ footer {
 }
 
 .projeto img {
-    width: 200px; /* Define a largura fixa das imagens para 150px */
+    width: 300px; /* Define a largura fixa das imagens para 150px */
     height: auto; /* Ajusta a altura automaticamente para manter a proporção */
     border-radius: 10px;
     transition: transform 0.3s;
@@ -310,7 +342,7 @@ footer {
     display: inline-block;
     margin-top: 10px;
     padding: 10px 20px;
-    font-size: 1.2em; /* Aumenta um pouco o tamanho da fonte */
+    font-size: 1.4em; /* Aumenta um pouco o tamanho da fonte */
     color: #4b2e2e; /* Cor da escrita marrom */
     background-color: transparent; /* Remove o fundo */
     border: none; /* Remove a borda */
@@ -328,7 +360,7 @@ footer {
 #contatos {
     padding: 20px 0; /* Ajusta o padding para a seção CONTATOS */
     text-align: center; /* Centraliza o texto */
-    margin-top: -200px; /* Ajusta a margem superior para aproximar a seção CONTATOS da seção PROJETOS */
+    margin-top: -120px; /* Ajusta a margem superior para aproximar a seção CONTATOS da seção PROJETOS */
 }
 
 #contatos h1,
@@ -356,7 +388,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 25px 0;
+    margin: 50px 0;
     font-size: 1.8em; /* Aumenta o tamanho da fonte */
 }
 
@@ -378,11 +410,86 @@ footer {
     text-decoration: underline;
 }
 
+/* -------------------- EFEITO DE REVELAÇÃO AO ROLAR -------------------- */
+/* Inicialmente, o conteúdo está invisível e deslocado */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+/* Quando a classe 'visible' é adicionada, o conteúdo fica visível e na posição correta */
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ------------------------- EFEITO DE DIGITAÇÃO ------------------------- */
+.typing-container {
+    display: inline-block;
+    width: 100%;
+}
+
+.typing-effect {
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    visibility: hidden; /* Inicialmente oculto */
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
 /* ------------------- Media query para telas menores ------------------- */
 @media (max-width: 800px) {
+    /* INICIO */
+    .inicio-content {
+        flex-direction: column; /* Alinha o conteúdo verticalmente em telas menores */
+        text-align: center;
+        padding: 0 5vw;
+        margin-top: 0; /* Ajusta a margem superior para aproximar a seção INICIO dos menus */
+    }
+
+    .text-content,
+    .image-content {
+        max-width: 90%;
+        margin-right: 0; /* Remove a margem direita em telas menores */
+    }
+
+    .image-content img {
+        margin-top: 320px; /* Ajusta a margem superior da imagem em telas menores */
+        max-width: 90%; /* Ajusta o tamanho da imagem em telas menores */
+        max-height: 200px; /* Ajusta a altura máxima da imagem em telas menores */
+    }
+
+    .text-content {
+        margin-top: -100px; /* Ajusta a margem superior para evitar sobreposição */
+    }
+
+    .text-content h1 {
+        font-size: 2.9em; /* Ajusta o tamanho do título em telas menores */
+        white-space: normal; /* Permite que o texto quebre linha em telas menores */
+    }
+
+    .text-content h2 {
+        font-size: 1.5em; /* Aumenta o tamanho do subtítulo em telas menores */
+    }
+
+    .text-content p {
+        font-size: 1.3em; /* Aumenta o tamanho do subtítulo em telas menores */
+        white-space: normal; /* Permite que o texto quebre linha em telas menores */
+    }
+
+    /* SOBRE */
     #sobre {
         padding: 20px 0; /* Ajusta o padding para a seção SOBRE */
-        margin-top: -250px; /* Ajusta a margem superior para aproximar a seção SOBRE da seção HOME em telas menores */
+        margin-top: -50px; /* Ajusta a margem superior para aproximar a seção SOBRE da seção HOME em telas menores */
         text-align: center; /* Centraliza o texto */
     }
 
@@ -401,9 +508,10 @@ footer {
         margin: 0 auto; /* Centraliza o parágrafo */
     }
 
+    /* HABILIDADES */
     #habilidades {
         padding: 20px 0; /* Ajusta o padding para a seção HABILIDADES */
-        margin-top: 0px; /* Ajusta a margem superior para aproximar a seção HABILIDADES da seção SOBRE em telas menores */
+        margin-top: 15px; /* Ajusta a margem superior para aproximar a seção HABILIDADES da seção SOBRE em telas menores */
         text-align: center; /* Centraliza o texto */
     }
 
@@ -429,9 +537,10 @@ footer {
         font-size: 2em; /* Aumenta o tamanho dos subtítulos */
     }
 
+    /* PROJETOS */
     #projetos {
         padding: 20px 0; /* Ajusta o padding para a seção PROJETOS */
-        margin-top: -180px; /* Ajusta a margem superior para aproximar a seção PROJETOS da seção HABILIDADES em telas menores */
+        margin-top: -140px; /* Ajusta a margem superior para aproximar a seção PROJETOS da seção HABILIDADES em telas menores */
         text-align: center; /* Centraliza o texto */
     }
 
@@ -450,76 +559,112 @@ footer {
         margin: 0 auto; /* Centraliza o parágrafo */
     }
 
-    #contatos {
-        padding: 20px 0; /* Ajusta o padding para a seção CONTATOS */
-        margin-top: -180px; /* Ajusta a margem superior para aproximar a seção CONTATOS da seção PROJETOS em telas menores */
-        text-align: center; /* Centraliza o texto */
+    .projetos-container {
+        display: flex;
+        justify-content: center; /* Centraliza os projetos */
+        align-items: center;
+        width: 100%;
+        padding: 20px 0;
+        box-sizing: border-box;
+        overflow: hidden; /* Garante que nada saia da área visível */
+        position: relative;
     }
 
-    #contatos h1,
-    #contatos h2,
-    #contatos p {
-        font-size: 1.3em; /* Aumenta o tamanho da fonte */
+    .projetos-wrapper {
+        display: flex;
+        justify-content: center; /* Centraliza as imagens horizontalmente */
+        align-items: center; /* Centraliza as imagens verticalmente */
+        gap: 20px; /* Mantém o espaçamento fixo entre as imagens */
+        width: 80%; /* Ajuste o tamanho do contêiner para garantir que as imagens fiquem no centro da tela */
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0 auto; /* Garante que o contêiner fique centralizado horizontalmente */
+    }
+
+    .projeto {
+        display: none; /* Inicialmente, as imagens estão ocultas */
+        text-align: center;
+    }
+
+    .projeto img {
+        width: 80%; /* Define a largura das imagens para 80% do espaço disponível */
+        height: auto;
+        display: block;
+        margin: 0 auto; /* Garante que a imagem seja centralizada dentro do contêiner */
+        object-fit: contain;
+        max-width: 100%; /* Impede que a imagem ultrapasse a largura do contêiner */
+    }
+
+    /* Exibe a imagem visível */
+    .projeto.show {
+        display: block;
+    }
+
+    .github-button {
+        display: block;
+        margin: 10px auto;
+        font-size: 1.3em;
+    }
+
+    .arrow {
+        background-color: transparent;
+        border: none;
+        font-size: 2em;
+        cursor: pointer;
+        position: absolute;
+        color: #4b2e2e;
+        z-index: 1;
+        display: none; /* Garante que as setas sejam exibidas em telas menores */
+    }
+
+    .projeto.show + .arrow {
+        display: block !important; /* Exibe a seta quando houver um projeto visível */
+    }
+
+    .left-arrow {
+        left: 10px;
+        top: 39%;
+    }
+
+    .right-arrow {
+        right: 10px;
+        top: 39%;
+    }
+
+    /* CONTATOS */
+    #contatos {
+        padding: 20px;
+        margin-top: -200px; /* Ajusta a margem superior para aproximar a seção CONTATOS da seção PROJETOS em telas menores */
+        text-align: center; /* Centraliza o texto */
+        width: 100%; /* Garante que a largura da seção ocupe 100% da tela */
+        box-sizing: border-box; /* Garante que o padding não afete a largura total da seção */
     }
 
     #contatos h1 {
         font-size: 2.8em; /* Aumenta o tamanho do título "CONTATOS" */
     }
 
+    #contatos h2 {
+        font-size: 1.3em; /* Aumenta o tamanho da fonte */
+    }
+
     #contatos p {
-        max-width: 70%; /* Limita a largura do parágrafo */
-        margin: 0 auto; /* Centraliza o parágrafo */
-    }
-
-    .home-content {
-        flex-direction: column; /* Alinha o conteúdo verticalmente em telas menores */
-        text-align: center;
-    }
-
-    .text-content,
-    .image-content {
         max-width: 100%;
-        margin-right: 0; /* Remove a margem direita em telas menores */
+        font-size: 1.3em;
+        margin: 0 auto;
     }
 
-    .image-content img {
-        margin-top: 100px;
-        max-width: 90%; /* Ajusta o tamanho da imagem em telas menores */
-        max-height: 200px; /* Ajusta a altura máxima da imagem em telas menores */
+    /* Diminuir apenas o tamanho do texto nos contatos */
+    .contact-list span {
+        font-size: 0.5em; /* Ajusta o tamanho da fonte dos textos dos contatos */
+        word-break: break-word; /* Quebra o texto longo para evitar corte */
     }
 
-    .text-content {
-        margin-top: -250px; /* Ajusta a margem superior do conteúdo em telas menores */
+    .contact-list i {
+        font-size: 1.2em; /* Ajusta o tamanho dos ícones */
     }
 
-    .text-content h1 {
-        font-size: 2.9em; /* Ajusta o tamanho do título em telas menores */
-        white-space: normal; /* Permite que o texto quebre linha em telas menores */
+    .contact-list li {
+        margin: 40px 0; /* Diminui o espaço entre os itens de contato */
     }
-
-    .text-content h2 {
-        font-size: 1.5em; /* Aumenta o tamanho do subtítulo em telas menores */
-    }
-
-    .text-content p {
-        font-size: 1.3em; /* Aumenta o tamanho do subtítulo em telas menores */
-    }
-
-    nav ul li a:hover {
-        text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
-        text-decoration-color: #4b2e2e; /* Define a cor do sublinhado */
-    }
-}
-
-/* Inicialmente, o conteúdo está invisível e deslocado */
-.reveal {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
-}
-
-/* Quando a classe 'visible' é adicionada, o conteúdo fica visível e na posição correta */
-.reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
 }
