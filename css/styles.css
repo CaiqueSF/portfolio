@@ -18,6 +18,8 @@ html {
 header {
     background-color: transparent; /* Torna o fundo do menu transparente */
     padding: 40px 0; /* Aumenta o trecho de fundo marrom dos menus */
+    position: relative; /* Garante que o z-index funcione */
+    z-index: 100; /* Coloca o menu acima de outros elementos */
 }
 
 nav ul {
@@ -47,7 +49,7 @@ nav ul li a:hover {
 
 .section {
     padding: 10px 20px; /* Subiu o conteúdo para ficar mais próximo dos menus */
-    min-height: 100vh; /* Garante que cada seção ocupe pelo menos a altura da tela */
+    min-height: 100dvh; /* Garante que cada seção ocupe pelo menos a altura da tela */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -68,7 +70,7 @@ footer {
 #inicio {
     padding: 20px 0;
     text-align: center; /* Centraliza o texto */
-    min-height: 100vh; /* Garante que a seção ocupe pelo menos a altura da tela */
+    min-height: 100dvh; /* Garante que a seção ocupe pelo menos a altura da tela */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -89,7 +91,7 @@ footer {
     flex: 1; /* Permite que o texto ocupe o espaço necessário */
     text-align: center; /* Centraliza o texto */
     margin-right: 0; /* Remove a margem direita */
-    margin-top: -300px; /* Sobe o conteúdo para não sobrescrever a seção SOBRE */
+    margin-top: -100px; /* Sobe o conteúdo para não sobrescrever a seção SOBRE */
     z-index: 1; /* Garante que o texto fique acima de outros elementos */
     position: relative; /* Garante que o texto seja posicionado corretamente */
     color: #4b2e2e; /* Garante que a cor do texto seja marrom escuro */
@@ -123,7 +125,7 @@ footer {
     flex: 1; /* Permite que a imagem ocupe o espaço necessário */
     display: flex;
     justify-content: center;
-    margin-top: -300px; /* Sobe a imagem para ficar mais próxima da borda superior */
+    margin-top: -100px; /* Sobe a imagem para ficar mais próxima da borda superior */
 }
 
 .image-content img {
@@ -137,7 +139,7 @@ footer {
 /* ------------------------------- SOBRE ------------------------------- */
 #sobre {
     padding: 20px 0;
-    margin-top: -290px;
+    margin-top: 0;
     text-align: center; /* Centraliza o texto */
 }
 
@@ -167,6 +169,8 @@ footer {
     border-radius: 10px; /* Cantos arredondados */
     text-decoration: none;
     transition: transform 0.3s; /* Transição suave para o efeito de zoom */
+    position: relative; /* Garante que o z-index funcione */
+    z-index: 10; /* Coloca o botão acima de outros elementos */
 }
 
 .download-button:hover {
@@ -180,7 +184,7 @@ footer {
 #habilidades {
     padding: 20px 0; /* Ajusta o padding para a seção HABILIDADES */
     text-align: center; /* Centraliza o texto */
-    margin-top: -110px; /* Ajusta a margem superior para aproximar a seção HABILIDADES da seção SOBRE */
+    margin-top: 20px; /* Ajusta a margem superior para aproximar a seção HABILIDADES da seção SOBRE */
 }
 
 #habilidades h1 {
@@ -256,7 +260,7 @@ footer {
 #projetos {
     padding: 20px 0; /* Ajusta o padding para a seção PROJETOS */
     text-align: center; /* Centraliza o texto */
-    margin-top: -185px; /* Ajusta a margem superior para aproximar a seção PROJETOS da seção HABILIDADES */
+    margin-top: 40px; /* Ajusta a margem superior para aproximar a seção PROJETOS da seção HABILIDADES */
 }
 
 #projetos h1,
@@ -335,7 +339,8 @@ footer {
 }
 
 .projeto img:hover {
-    transform: scale(1.05); /* Aumenta um pouco a imagem ao passar o mouse */
+    transform: scale(1.06); /* Aumenta um pouco a imagem ao passar o mouse */
+    transition: transform 0.3s; /* Mantém a transição suave */
 }
 
 .github-button {
@@ -360,7 +365,7 @@ footer {
 #contatos {
     padding: 20px 0; /* Ajusta o padding para a seção CONTATOS */
     text-align: center; /* Centraliza o texto */
-    margin-top: -120px; /* Ajusta a margem superior para aproximar a seção CONTATOS da seção PROJETOS */
+    margin-top: 40px; /* Ajusta a margem superior para aproximar a seção CONTATOS da seção PROJETOS */
 }
 
 #contatos h1,
@@ -446,11 +451,39 @@ footer {
     }
 }
 
-/* ------------------- Media query para telas menores ------------------- */
+/* ------------------- Media query para telas MAIORES ------------------- */
+@media (min-width: 1920px) {
+    #inicio,
+    #sobre,
+    #habilidades,
+    #projetos,
+    #contatos {
+        margin-top: -220px; /* Aproxima as seções */
+        position: relative; /* Garante que o z-index funcione corretamente */
+        z-index: 1; /* Mantém as seções abaixo de elementos importantes */
+    }
+
+    .download-button {
+        position: relative; /* Garante que o botão esteja posicionado corretamente */
+        z-index: 10; /* Coloca o botão acima de outros elementos */
+        pointer-events: auto; /* Garante que o botão receba cliques */
+    }
+
+    .section {
+        overflow: visible; /* Garante que o botão não seja cortado */
+    }
+
+    .projetos-wrapper {
+        gap: 150px; /* Aumenta o espaçamento lateral entre as imagens */
+    }
+}
+
+/* ------------------- Media query para telas MENORES ------------------- */
 @media (max-width: 800px) {
     /* INICIO */
     .inicio-content {
         flex-direction: column; /* Alinha o conteúdo verticalmente em telas menores */
+        align-items: center; /* Centraliza os itens */
         text-align: center;
         padding: 0 5vw;
         margin-top: 0; /* Ajusta a margem superior para aproximar a seção INICIO dos menus */
@@ -463,13 +496,13 @@ footer {
     }
 
     .image-content img {
-        margin-top: 320px; /* Ajusta a margem superior da imagem em telas menores */
+        margin-top: 135px; /* Ajusta a margem superior da imagem em telas menores */
         max-width: 90%; /* Ajusta o tamanho da imagem em telas menores */
         max-height: 200px; /* Ajusta a altura máxima da imagem em telas menores */
     }
 
     .text-content {
-        margin-top: -100px; /* Ajusta a margem superior para evitar sobreposição */
+        margin-top: -30px; /* Ajusta a margem superior para evitar sobreposição */
     }
 
     .text-content h1 {
@@ -489,7 +522,7 @@ footer {
     /* SOBRE */
     #sobre {
         padding: 20px 0; /* Ajusta o padding para a seção SOBRE */
-        margin-top: -50px; /* Ajusta a margem superior para aproximar a seção SOBRE da seção HOME em telas menores */
+        margin-top: 0px; /* Ajusta a margem superior para aproximar a seção SOBRE da seção HOME em telas menores */
         text-align: center; /* Centraliza o texto */
     }
 
@@ -593,6 +626,11 @@ footer {
         margin: 0 auto; /* Garante que a imagem seja centralizada dentro do contêiner */
         object-fit: contain;
         max-width: 100%; /* Impede que a imagem ultrapasse a largura do contêiner */
+    }
+
+    .projeto img:hover {
+        transform: scale(1.07); /* Aumenta imagem ao passar o mouse */
+        transition: transform 0.3s; /* Mantém a transição suave */
     }
 
     /* Exibe a imagem visível */
