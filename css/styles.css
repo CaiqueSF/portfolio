@@ -147,6 +147,7 @@ footer {
 #sobre h2,
 #sobre p {
     font-size: 1.8em; /* Aumenta o tamanho da fonte */
+    text-align: justify; /* Justifica o texto */
 }
 
 #sobre h1 {
