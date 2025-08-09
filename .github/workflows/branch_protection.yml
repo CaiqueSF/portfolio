@@ -1,0 +1,31 @@
+name: Configure Branch Protection
+
+on:
+    push:
+        branches: [main]
+
+jobs:
+    protect-branch:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Set branch protection
+              run: |
+                  curl -X PUT -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+                    -H "Accept: application/vnd.github.v3+json" \
+                    "https://api.github.com/repos/${{ github.repository }}/branches/main/protection" \
+                    -d '{
+                      "required_pull_request_reviews": {
+                        "required_approving_review_count": 1,
+                        "require_code_owner_reviews": true,
+                        "dismiss_stale_reviews": true
+                      },
+                      "enforce_admins": true,
+                      "restrictions": {
+                        "users": ["CaiqueSF"],
+                        "teams": []
+                      },
+                      "required_status_checks": null,
+                      "required_linear_history": true,
+                      "allow_force_pushes": false,
+                      "allow_deletions": false
+                    }'
