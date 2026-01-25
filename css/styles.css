@@ -1,5 +1,5 @@
 body {
-    background-attachment: scroll; /* Melhor performance em dispositivos móveis */
+    margin: 0;
 }
 
 html {
@@ -48,12 +48,17 @@ nav ul li a:hover {
 }
 
 .section {
-    padding: 10px 20px; /* Subiu o conteúdo para ficar mais próximo dos menus */
-    min-height: 100dvh; /* Garante que cada seção ocupe pelo menos a altura da tela */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    padding: 80px 20px;
+    width: 100%;
+    position: relative;
+}
+
+#inicio,
+#sobre,
+#habilidades,
+#projetos,
+#contatos {
+    scroll-margin-top: 140px; /* altura do header */
 }
 
 footer {
@@ -68,13 +73,10 @@ footer {
 
 /* ------------------------------- INICIO ------------------------------- */
 #inicio {
-    padding: 20px 0;
-    text-align: center; /* Centraliza o texto */
-    min-height: 100dvh; /* Garante que a seção ocupe pelo menos a altura da tela */
+    min-height: calc(100vh - 120px);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
 }
 
 .inicio-content {
@@ -91,7 +93,6 @@ footer {
     flex: 1; /* Permite que o texto ocupe o espaço necessário */
     text-align: center; /* Centraliza o texto */
     margin-right: 0; /* Remove a margem direita */
-    margin-top: -100px; /* Sobe o conteúdo para não sobrescrever a seção SOBRE */
     z-index: 1; /* Garante que o texto fique acima de outros elementos */
     position: relative; /* Garante que o texto seja posicionado corretamente */
     color: #4b2e2e; /* Garante que a cor do texto seja marrom escuro */
@@ -110,14 +111,12 @@ footer {
 .text-content h2 {
     font-size: 2.6em; /* Tamanho do subtítulo */
     color: #4b2e2e; /* Marrom escuro */
-    margin-top: 0; /* Remove a margem superior */
 }
 
 .text-content p {
     font-size: 1.6em; /* Tamanho da fonte do parágrafo */
     color: #4b2e2e; /* Marrom escuro */
     text-align: center; /* Centraliza o texto */
-    margin-top: 0; /* Remove a margem superior */
 }
 
 .image-content {
@@ -125,7 +124,6 @@ footer {
     flex: 1; /* Permite que a imagem ocupe o espaço necessário */
     display: flex;
     justify-content: center;
-    margin-top: -100px; /* Sobe a imagem para ficar mais próxima da borda superior */
 }
 
 .image-content img {
@@ -133,7 +131,6 @@ footer {
     height: auto;
     border-radius: 50%; /* Torna a imagem circular */
     max-height: 300px; /* Aumenta a altura máxima para a imagem */
-    margin-top: 0; /* Remove a margem superior negativa */
 }
 
 /* ------------------------------- REVEAL / ANIMAÇÕES ------------------------------- */
@@ -146,34 +143,38 @@ footer {
 /* ------------------------------- SOBRE ------------------------------- */
 #sobre {
     padding: 20px 0;
-    margin-top: 0;
-    text-align: center; /* Centraliza o texto */
-    justify-content: flex-start; /* Alinha o conteúdo ao topo */
-    min-height: auto; /* Ajusta a altura mínima para o conteúdo */
+    text-align: center;
+    position: relative;
+    z-index: 50;
+    padding-bottom: 80px;
 }
 
 #sobre h1,
-#sobre h2,
-#sobre p {
+#sobre h2 {
+    text-align: center;
     font-size: 1.8em; /* Aumenta o tamanho da fonte */
-    text-align: justify; /* Justifica o texto */
 }
 
 #sobre h1 {
     font-size: 3.5em; /* Aumenta o tamanho do título "SOBRE" */
     margin-bottom: 1px; /* Diminui o espaço entre o título e o conteúdo */
+    text-align: center;
 }
 
 #sobre p {
     max-width: 70%; /* Limita a largura do parágrafo */
     margin: 0 auto; /* Centraliza o parágrafo */
+    text-align: justify;
+    font-size: 1.8em; /* Aumenta o tamanho da fonte */
 }
 
 .download-button {
     pointer-events: auto;
     display: inline-block;
-    padding: 10px 20px;
-    font-size: 0.8em;
+    margin: 30px auto;
+    cursor: pointer;
+    padding: 4px 4px; /* Aumenta o botão */
+    font-size: 1.7em; /* Aumenta as letras */
     color: #4b2e2e; /* Cor das letras marrom */
     background-color: white; /* Fundo branco */
     border: 2px solid #4b2e2e; /* Borda marrom */
@@ -181,7 +182,16 @@ footer {
     text-decoration: none;
     transition: transform 0.3s; /* Transição suave para o efeito de zoom */
     position: relative; /* Garante que o z-index funcione */
-    z-index: 999; /* Coloca o botão acima de outros elementos */
+    z-index: 1; /* Coloca o botão acima de outros elementos */
+}
+
+.btn-wrapper {
+    text-align: center;
+}
+
+.btn-wrapper .download-button {
+    display: inline-block;
+    margin: 40px auto 0 auto;
 }
 
 .download-button:hover {
@@ -195,7 +205,9 @@ footer {
 #habilidades {
     padding: 20px 0; /* Ajusta o padding para a seção HABILIDADES */
     text-align: center; /* Centraliza o texto */
-    margin-top: 20px; /* Ajusta a margem superior para aproximar a seção HABILIDADES da seção SOBRE */
+    position: relative;
+    z-index: 1;
+    overflow: visible;
 }
 
 #habilidades h1 {
@@ -217,7 +229,6 @@ footer {
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 10px;
-    margin-top: 10px;
 }
 
 .habilidade {
@@ -271,7 +282,6 @@ footer {
 #projetos {
     padding: 20px 0; /* Ajusta o padding para a seção PROJETOS */
     text-align: center; /* Centraliza o texto */
-    margin-top: 40px; /* Ajusta a margem superior para aproximar a seção PROJETOS da seção HABILIDADES */
 }
 
 #projetos h1,
@@ -293,12 +303,15 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 20px;
+    align-items: center;
     position: relative;
 }
 
 .projetos-wrapper {
+    width: fit-content;
+    margin: 0 auto;
     display: flex;
+    justify-content: center;
     overflow: hidden; /* Remove a barra de rolagem */
     scroll-behavior: smooth;
     gap: 100px; /* Diminui o espaço entre as imagens */
@@ -356,7 +369,6 @@ footer {
 
 .github-button {
     display: inline-block;
-    margin-top: 10px;
     padding: 10px 20px;
     font-size: 1.4em; /* Aumenta um pouco o tamanho da fonte */
     color: #4b2e2e; /* Cor da escrita marrom */
@@ -378,7 +390,6 @@ footer {
 #contatos {
     padding: 20px 0; /* Ajusta o padding para a seção CONTATOS */
     text-align: center; /* Centraliza o texto */
-    margin-top: 40px; /* Ajusta a margem superior para aproximar a seção CONTATOS da seção PROJETOS */
 }
 
 #contatos h1,
@@ -429,19 +440,19 @@ footer {
 }
 
 /* -------------------- EFEITO DE REVELAÇÃO AO ROLAR -------------------- */
-/* Inicialmente, o conteúdo está invisível e deslocado */
 .reveal {
     opacity: 0;
     transform: translateY(50px);
     transition:
         opacity 1.5s ease-out,
         transform 1.5s ease-out;
+    pointer-events: none;
 }
 
-/* Quando a classe 'visible' é adicionada, o conteúdo fica visível e na posição correta */
 .reveal.visible {
     opacity: 1;
     transform: translateY(0);
+    pointer-events: auto;
 }
 
 /* ------------------------- EFEITO DE DIGITAÇÃO ------------------------- */
@@ -473,9 +484,7 @@ footer {
     #habilidades,
     #projetos,
     #contatos {
-        margin-top: -220px; /* Aproxima as seções */
-        position: relative; /* Garante que o z-index funcione corretamente */
-        z-index: 1; /* Mantém as seções abaixo de elementos importantes */
+        text-align: center;
     }
 
     .download-button {
@@ -501,7 +510,6 @@ footer {
         align-items: center; /* Centraliza os itens */
         text-align: center;
         padding: 0 5vw;
-        margin-top: 0; /* Ajusta a margem superior para aproximar a seção INICIO dos menus */
     }
 
     .text-content,
@@ -511,13 +519,8 @@ footer {
     }
 
     .image-content img {
-        margin-top: 135px; /* Ajusta a margem superior da imagem em telas menores */
         max-width: 90%; /* Ajusta o tamanho da imagem em telas menores */
         max-height: 200px; /* Ajusta a altura máxima da imagem em telas menores */
-    }
-
-    .text-content {
-        margin-top: -30px; /* Ajusta a margem superior para evitar sobreposição */
     }
 
     .text-content h1 {
@@ -537,7 +540,6 @@ footer {
     /* SOBRE */
     #sobre {
         padding: 20px 0; /* Ajusta o padding para a seção SOBRE */
-        margin-top: 0px; /* Ajusta a margem superior para aproximar a seção SOBRE da seção HOME em telas menores */
         text-align: center; /* Centraliza o texto */
     }
 
@@ -559,7 +561,6 @@ footer {
     /* HABILIDADES */
     #habilidades {
         padding: 20px 0; /* Ajusta o padding para a seção HABILIDADES */
-        margin-top: 15px; /* Ajusta a margem superior para aproximar a seção HABILIDADES da seção SOBRE em telas menores */
         text-align: center; /* Centraliza o texto */
     }
 
@@ -588,7 +589,6 @@ footer {
     /* PROJETOS */
     #projetos {
         padding: 20px 0; /* Ajusta o padding para a seção PROJETOS */
-        margin-top: -140px; /* Ajusta a margem superior para aproximar a seção PROJETOS da seção HABILIDADES em telas menores */
         text-align: center; /* Centraliza o texto */
     }
 
@@ -687,7 +687,6 @@ footer {
     /* CONTATOS */
     #contatos {
         padding: 20px;
-        margin-top: -200px; /* Ajusta a margem superior para aproximar a seção CONTATOS da seção PROJETOS em telas menores */
         text-align: center; /* Centraliza o texto */
         width: 100%; /* Garante que a largura da seção ocupe 100% da tela */
         box-sizing: border-box; /* Garante que o padding não afete a largura total da seção */
