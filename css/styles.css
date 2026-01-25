@@ -136,11 +136,20 @@ footer {
     margin-top: 0; /* Remove a margem superior negativa */
 }
 
+/* ------------------------------- REVEAL / ANIMAÇÕES ------------------------------- */
+.reveal,
+.reveal::before,
+.reveal::after {
+    pointer-events: none;
+}
+
 /* ------------------------------- SOBRE ------------------------------- */
 #sobre {
     padding: 20px 0;
     margin-top: 0;
     text-align: center; /* Centraliza o texto */
+    justify-content: flex-start; /* Alinha o conteúdo ao topo */
+    min-height: auto; /* Ajusta a altura mínima para o conteúdo */
 }
 
 #sobre h1,
@@ -161,6 +170,7 @@ footer {
 }
 
 .download-button {
+    pointer-events: auto;
     display: inline-block;
     padding: 10px 20px;
     font-size: 0.8em;
@@ -171,7 +181,7 @@ footer {
     text-decoration: none;
     transition: transform 0.3s; /* Transição suave para o efeito de zoom */
     position: relative; /* Garante que o z-index funcione */
-    z-index: 10; /* Coloca o botão acima de outros elementos */
+    z-index: 999; /* Coloca o botão acima de outros elementos */
 }
 
 .download-button:hover {
@@ -354,7 +364,9 @@ footer {
     border: none; /* Remove a borda */
     text-decoration: none;
     font-weight: bold; /* Deixa as letras em negrito */
-    transition: color 0.3s, text-decoration 0.3s;
+    transition:
+        color 0.3s,
+        text-decoration 0.3s;
 }
 
 .github-button:hover {
@@ -421,7 +433,9 @@ footer {
 .reveal {
     opacity: 0;
     transform: translateY(50px);
-    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+    transition:
+        opacity 1.5s ease-out,
+        transform 1.5s ease-out;
 }
 
 /* Quando a classe 'visible' é adicionada, o conteúdo fica visível e na posição correta */
