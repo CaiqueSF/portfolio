@@ -133,6 +133,13 @@ footer {
     max-height: 300px; /* Aumenta a altura máxima para a imagem */
 }
 
+/* ------------------------------- REVEAL / ANIMAÇÕES ------------------------------- */
+.reveal,
+.reveal::before,
+.reveal::after {
+    pointer-events: none;
+}
+
 /* ------------------------------- SOBRE ------------------------------- */
 #sobre {
     padding: 20px 0;
